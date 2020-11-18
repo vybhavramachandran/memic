@@ -1,0 +1,14 @@
+build-*/
+build*/
+
+#Sublime
+*.sublime-workspace
+**/__pycache__
+#Linux
+*.swp
+
+*~*.TMP
+
+.idea/*
+.vs/*
+worktrees/*

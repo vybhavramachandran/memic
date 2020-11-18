@@ -1,0 +1,13 @@
+prefix=/opt/biogears/usr
+exec_prefix=/opt/biogears/usr
+libdir=/opt/biogears/core/_skbuild/linux-x86_64-3.8/cmake-install/lib
+sharedlibdir=/opt/biogears/core/_skbuild/linux-x86_64-3.8/cmake-install/lib
+includedir=/opt/biogears/core/_skbuild/linux-x86_64-3.8/cmake-install/include
+
+Name: minizip
+Description: Minizip zip file manipulation library
+Version: 2.9.0
+
+Requires: zlib
+Libs: -L${libdir} -L${sharedlibdir} -lminizip
+Cflags: -I${includedir}

@@ -1,0 +1,1 @@
+{"args": ["/usr/local/bin/cmake", "-DCMAKE_INSTALL_PREFIX=/opt/biogears/usr", "-DBiogears_BUILD_JAVATOOLS=OFF", "-DBiogears_BUILD_HOWTOS=ON", "-G", "Ninja", "-DCMAKE_BUILD_TYPE:STRING=Release"], "version": "3.16.5", "environment": {"PYTHONNOUSERSITE": null, "PYTHONPATH": "/opt/biogears/core/projects/biogears"}}

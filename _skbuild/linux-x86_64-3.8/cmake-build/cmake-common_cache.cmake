@@ -1,0 +1,8 @@
+set(ROOT_PROJECT_NAME Biogears)
+set(PROJECT_SOURCE_DIR "/opt/biogears/core")
+set(CMAKE_BINARY_DIR "/opt/biogears/core/_skbuild/linux-x86_64-3.8/cmake-build")
+set(CMAKE_PREFIX_PATH "")
+set(CMAKE_EXECUTABLE_SUFFIX )
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY /opt/biogears/core/_skbuild/linux-x86_64-3.8/cmake-build/outputs/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY /opt/biogears/core/_skbuild/linux-x86_64-3.8/cmake-build/outputs/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY /opt/biogears/core/_skbuild/linux-x86_64-3.8/cmake-build/outputs/bin)
