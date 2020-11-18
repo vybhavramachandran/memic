@@ -464,7 +464,7 @@ message(STATUS "")
 
 
 
-#### PYBIND LOGIC
+#### PYBIND LOGICs
 
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 find_package(pybind11 REQUIRED)
@@ -477,11 +477,18 @@ add_subdirectory(pybind11)
 # pybind11_add_module(cmake_example src/main.cpp)
 
 pybind11_add_module(pybcardio ./libBiogears/src/pybcardio.cpp)
+pybind11_add_module(pyblogger ./libBiogears/src/pyblogger.cpp)
 
 target_include_directories(pybcardio
+PRIVATE /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema
+)
+
+target_include_directories(pyblogger
 PRIVATE /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema
 )
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
 target_link_libraries(pybcardio PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
 
+TARGET_LINK_LIBRARIES(pyblogger PRIVATE python3.8)
+target_link_libraries(pyblogger PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
 
