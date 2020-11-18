@@ -1,6 +1,5 @@
 #include "../include/biogears/cdm/system/physiology/SECardiovascularSystem.h"
 #include "../include/biogears/cdm/system/SESystem.h"
-#include "../include/biogears/cdm/utils/Logger.h"
 
 
 #include <pybind11/pybind11.h>
@@ -17,7 +16,7 @@ PYBIND11_MODULE(pybcardio, m) {
 
     py::class_<biogears::SECardiovascularSystem,biogears::SESystem >(m, "SECardiovascularSystem")
 
-    // .def(py::init<biogears::Logger*>();
+    .def(py::init<biogears::Logger *>())
 
     .def("Clear",&biogears::SECardiovascularSystem::Clear);
  
