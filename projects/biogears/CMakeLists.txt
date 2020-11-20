@@ -467,7 +467,7 @@ message(STATUS "")
 #### PYBIND LOGICs
 
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
-find_package(pybind11 REQUIRED)
+# find_package(pybind11 REQUIRED)
 include_directories(/usr/include/python3.8/)
 # FIND_PACKAGE(PythonInterp 3)
 # FIND_PACKAGE(PythonLibs   3)
@@ -478,6 +478,7 @@ add_subdirectory(pybind11)
 
 pybind11_add_module(pybcardio ./libBiogears/src/pybcardio.cpp)
 pybind11_add_module(pyblogger ./libBiogears/src/pyblogger.cpp)
+# pybind11_add_module(pybscalarpressure ./libBiogears/src/pybscalarpressure.cpp)
 
 target_include_directories(pybcardio
 PRIVATE /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema
