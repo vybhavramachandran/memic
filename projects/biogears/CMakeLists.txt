@@ -506,4 +506,4 @@ TARGET_LINK_LIBRARIES(pybscalarpressure PRIVATE python3.8)
 target_link_libraries(pybscalarpressure PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
 
 TARGET_LINK_LIBRARIES(pybBioGearsEngine PRIVATE python3.8)
-target_link_libraries(pybBioGearsEngine PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
+target_link_libraries(pybBioGearsEngine PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
