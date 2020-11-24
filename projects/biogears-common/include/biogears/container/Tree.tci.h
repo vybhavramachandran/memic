@@ -239,6 +239,7 @@ auto Tree<Data>::operator=(Tree&& rhs) -> Tree&
   }
   return *this;
 }
+
 }
 
 #endif //BIOGEARS_CONTAINER_TREE_TCI_H

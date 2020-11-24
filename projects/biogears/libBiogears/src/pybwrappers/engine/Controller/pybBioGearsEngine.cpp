@@ -10,7 +10,7 @@
 #include <biogears/cdm/patient/assessments/SEPatientAssessment.h>
 #include <biogears/cdm/system/SESystem.h>
 #include <biogears/engine/Controller/BioGears.h>
-
+#include <biogears/container/Tree.tci.h>
 #include <pybind11/pybind11.h>
 
 
@@ -21,7 +21,7 @@ namespace py = pybind11;
 
 PYBIND11_MODULE(pybBioGearsEngine, m) {
 
-    py::class_<biogears::BioGearsEngine, biogears::PhysiologyEngine, biogears::BioGears>(m, "BioGearsEngine")
+    py::class_<biogears::BioGearsEngine>(m, "BioGearsEngine")
     .def(py::init<biogears::Logger *>())
     .def(py::init<const char*>())
     .def(py::init<std::string&>())
@@ -65,6 +65,7 @@ PYBIND11_MODULE(pybBioGearsEngine, m) {
     .def("GetElectroCardioGram",py::overload_cast<>(&biogears::BioGearsEngine::GetElectroCardioGram))
     .def("GetInhaler",py::overload_cast<>(&biogears::BioGearsEngine::GetInhaler))
     .def("GetCompartments",py::overload_cast<>(&biogears::BioGearsEngine::GetCompartments))
+    .def("GetDataRequestGraph",&biogears::BioGearsEngine::GetDataRequestGraph)
     // .def("GetDataRequestGraph",static_cast<biogears::Tree<const char*>(biogears::BioGearsEngine::*)()>(&biogears::BioGearsEngine::GetDataRequestGraph,py::const_))
     // .def("GetDataRequestGraph",py::overload_cast<>(&biogears::BioGearsEngine::GetDataRequestGraph,py::const_))
     .def("IsAutoTracking",py::overload_cast<>(&biogears::BioGearsEngine::IsAutoTracking,py::const_))

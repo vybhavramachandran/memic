@@ -482,7 +482,7 @@ pybind11_add_module(pyblogger ./libBiogears/src/pyblogger.cpp)
 pybind11_add_module(pybscalarpressure ./libBiogears/src/pybscalarpressure.cpp)
 pybind11_add_module(pybBioGearsEngine ./libBiogears/src/pybwrappers/engine/Controller/pybBioGearsEngine.cpp)
 
-set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema)
+set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
 target_include_directories(pybcardio
 PRIVATE pybind_include_directories
