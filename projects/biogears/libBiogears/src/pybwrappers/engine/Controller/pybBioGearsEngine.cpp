@@ -36,7 +36,12 @@ namespace py = pybind11;
 PYBIND11_MODULE(pybBioGearsEngine, m) {
     // m.def("CreateBioGearsEngine")
     m.def("CreateBioGearsEngine",py::overload_cast<biogears::Logger*>(&biogears::CreateBioGearsEngine));
-    // m.def("CreateBioGearsEngine",py::overload_cast<const std::string>(&biogears::CreateBioGearsEngine))
-    // m.def("CreateBioGearsEngine",py::overload_cast<const char* >(&biogears::CreateBioGearsEngine));
+    m.def("CreateBioGearsEngine",py::overload_cast<const std::string>(&biogears::CreateBioGearsEngine));
+    m.def("CreateBioGearsEngine",py::overload_cast<const char* >(&biogears::CreateBioGearsEngine));
+    m.def("CreateBioGearsEngine",py::overload_cast<const std::string, const std::string >(&biogears::CreateBioGearsEngine));
+    m.def("CreateBioGearsEngine",py::overload_cast<const char*, const char*>(&biogears::CreateBioGearsEngine));
+    m.def("CreateBioGearsEngine",py::overload_cast<const std::string, biogears::Logger*>(&biogears::CreateBioGearsEngine));
+    m.def("CreateBioGearsEngine",py::overload_cast<const char*, biogears::Logger*>(&biogears::CreateBioGearsEngine));
+
 
 }    
