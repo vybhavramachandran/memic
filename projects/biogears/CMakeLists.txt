@@ -478,17 +478,18 @@ add_subdirectory(pybind11)
 
 
 pybind11_add_module(pybcardio ./libBiogears/src/pybcardio.cpp)
-pybind11_add_module(pyblogger ./libBiogears/src/pyblogger.cpp)
+pybind11_add_module(pybLogger ./libBiogears/src/pybwrappers/cdm/utils/pybLogger.cpp)
 pybind11_add_module(pybscalarpressure ./libBiogears/src/pybscalarpressure.cpp)
 pybind11_add_module(pybBioGearsEngine ./libBiogears/src/pybwrappers/engine/Controller/pybBioGearsEngine.cpp)
 pybind11_add_module(pybBioGearsEngineHeader ./libBiogears/src/pybwrappers/engine/Controller/pybBioGearsEngineHeader.cpp)
+pybind11_add_module(pybPhysiologyEngineTrack ./libBiogears/src/pybwrappers/cdm/engine/pybPhysiologyEngineTrack.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
 target_include_directories(pybcardio
 PRIVATE pybind_include_directories
 )
-target_include_directories(pyblogger
+target_include_directories(pybLogger
 PRIVATE pybind_include_directories
 )
 target_include_directories(pybscalarpressure
@@ -497,14 +498,14 @@ PRIVATE pybind_include_directories
 
 target_include_directories(pybBioGearsEngine PRIVATE pybind_include_directories)
 target_include_directories(pybBioGearsEngineHeader PRIVATE pybind_include_directories)
-
+target_include_directories(pybPhysiologyEngineTrack PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
 target_link_libraries(pybcardio PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
 
-TARGET_LINK_LIBRARIES(pyblogger PRIVATE python3.8)
-target_link_libraries(pyblogger PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
+TARGET_LINK_LIBRARIES(pybLogger PRIVATE python3.8)
+target_link_libraries(pybLogger PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
 
 TARGET_LINK_LIBRARIES(pybscalarpressure PRIVATE python3.8)
 target_link_libraries(pybscalarpressure PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
@@ -515,3 +516,6 @@ target_link_libraries(pybBioGearsEngine PRIVATE pybind11::module pybind11::embed
 
 TARGET_LINK_LIBRARIES(pybBioGearsEngineHeader PRIVATE python3.8)
 target_link_libraries(pybBioGearsEngineHeader PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybPhysiologyEngineTrack PRIVATE python3.8)
+target_link_libraries(pybPhysiologyEngineTrack PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)

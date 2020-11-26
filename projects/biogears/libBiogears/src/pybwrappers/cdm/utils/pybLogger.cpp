@@ -1,5 +1,5 @@
-#include "../include/biogears/cdm/utils/Logger.h"
-#include "../include/biogears/cdm/properties/SEScalarTime.h"
+#include <biogears/cdm/utils/Logger.h>
+#include <biogears/cdm/properties/SEScalarTime.h>
 
 #include <pybind11/pybind11.h>
 
@@ -9,7 +9,7 @@ namespace py = pybind11;
 
 
 
-PYBIND11_MODULE(pyblogger, m) {
+PYBIND11_MODULE(pybLogger, m) {
 
 
     py::class_<biogears::Logger>(m, "Logger")
