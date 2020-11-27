@@ -6,7 +6,7 @@
 #include <biogears/cdm/patient/SEPatient.h>
 #include <biogears/cdm/substance/SESubstanceManager.h>
 #include <biogears/cdm/scenario/requests/SEDataRequestManager.h>
-
+#include <biogears/cdm/compartment/SECompartmentManager.h>
 namespace py = pybind11;
 
 
@@ -17,8 +17,8 @@ PYBIND11_MODULE(pybPhysiologyEngineTrack, m) {
 
     py::class_<biogears::PhysiologyEngineTrack>(m, "PhysiologyEngineTrack")
     .def(py::init<biogears::PhysiologyEngine&>())
-    .def(py::init<biogears::SEPatient&, biogears::SESubstanceManager&, biogears::SECompartmentManager&, const std::vector<biogears::SESystem*>&, const std::vector<biogears::SESystem*>&())
-    .def(py::init<biogears::PhysiologyEngineTrack&&>())
+    .def(py::init<biogears::SEPatient&, biogears::SESubstanceManager&, biogears::SECompartmentManager&, const std::vector<biogears::SESystem*>&, const std::vector<biogears::SESystem*>&>())
+  //  .def(py::init<biogears::PhysiologyEngineTrack&>())
     .def("Clear",&biogears::PhysiologyEngineTrack::Clear)
     .def("GetDataTrack",&biogears::PhysiologyEngineTrack::GetDataTrack)
     .def("GetDataRequestManager",&biogears::PhysiologyEngineTrack::GetDataRequestManager)
