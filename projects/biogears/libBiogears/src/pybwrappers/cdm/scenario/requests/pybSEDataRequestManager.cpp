@@ -14,9 +14,7 @@ PYBIND11_MODULE(pybSEDataRequestManager, m) {
 
     py::class_<biogears::SEDataRequestManager>(m, "SEDataRequestManager")
     .def(py::init<biogears::Logger*>())
-    .def("Clear",&biogears::SESubstanceManager::Clear)
-    .def("Reset",&biogears::SESubstanceManager::Reset)
-    .def("LoadSubstanceDirectory",&biogears::SESubstanceManager::LoadSubstanceDirectory);
+    .def("Clear",&biogears::SEDataRequestManager::Clear);
 
 
  
