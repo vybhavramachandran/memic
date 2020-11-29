@@ -23,7 +23,7 @@ SEAcuteRespiratoryDistress::SEAcuteRespiratoryDistress()
 
 SEAcuteRespiratoryDistress::~SEAcuteRespiratoryDistress()
 {
-  Clear();
+Clear();
 }
 
 void SEAcuteRespiratoryDistress::Clear()

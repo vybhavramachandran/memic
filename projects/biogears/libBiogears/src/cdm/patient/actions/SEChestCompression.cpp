@@ -43,6 +43,7 @@ bool SEChestCompression::Load(const CDM::ChestCompressionData& in)
   return true;
 }
 
+
 void SEChestCompression::Unload(CDM::ChestCompressionData& data) const
 {
   SEPatientAction::Unload(data);

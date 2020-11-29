@@ -491,6 +491,12 @@ pybind11_add_module(pybSEBurnWound ./libBiogears/src/pybwrappers/cdm/patient/act
 pybind11_add_module(pybSEAcuteRespiratoryDistress ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEAcuteRespiratoryDistress.cpp)
 pybind11_add_module(pybSEBreathHold ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEBreathHold.cpp)
 pybind11_add_module(pybSEBronchoconstriction ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEBronchoconstriction.cpp)
+pybind11_add_module(pybSECardiacArrest ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSECardiacArrest.cpp)
+pybind11_add_module(pybSEChestCompressionForce ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEChestCompressionForce.cpp)
+pybind11_add_module(pybSEAcuteStress ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEAcuteStress.cpp)
+pybind11_add_module(pybSEBrainInjury ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEBrainInjury.cpp)
+pybind11_add_module(pybSEApnea ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEApnea.cpp)
+pybind11_add_module(pybSEAirwayObstruction ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEAirwayObstruction.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -515,6 +521,13 @@ target_include_directories(pybSEBurnWound PRIVATE pybind_include_directories)
 target_include_directories(pybSEAcuteRespiratoryDistress PRIVATE pybind_include_directories)
 target_include_directories(pybSEBreathHold PRIVATE pybind_include_directories)
 target_include_directories(pybSEBronchoconstriction PRIVATE pybind_include_directories)
+target_include_directories(pybSECardiacArrest PRIVATE pybind_include_directories)
+target_include_directories(pybSEChestCompressionForce PRIVATE pybind_include_directories)
+target_include_directories(pybSEAcuteStress PRIVATE pybind_include_directories)
+target_include_directories(pybSEBrainInjury PRIVATE pybind_include_directories)
+target_include_directories(pybSEApnea PRIVATE pybind_include_directories)
+target_include_directories(pybSEAirwayObstruction PRIVATE pybind_include_directories)
+
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
 target_link_libraries(pybcardio PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
@@ -557,3 +570,21 @@ target_link_libraries(pybSEBreathHold PRIVATE pybind11::module pybind11::embed p
 
 TARGET_LINK_LIBRARIES(pybSEBronchoconstriction PRIVATE python3.8)
 target_link_libraries(pybSEBronchoconstriction PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSECardiacArrest PRIVATE python3.8)
+target_link_libraries(pybSECardiacArrest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEChestCompressionForce PRIVATE python3.8)
+target_link_libraries(pybSEChestCompressionForce PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEAcuteStress PRIVATE python3.8)
+target_link_libraries(pybSEAcuteStress PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEBrainInjury PRIVATE python3.8)
+target_link_libraries(pybSEBrainInjury PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEApnea PRIVATE python3.8)
+target_link_libraries(pybSEApnea PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEAirwayObstruction PRIVATE python3.8)
+target_link_libraries(pybSEAirwayObstruction PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)

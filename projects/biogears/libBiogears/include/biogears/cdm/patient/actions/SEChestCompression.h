@@ -35,6 +35,7 @@ protected:
 
 public:
   virtual void ToString(std::ostream& str) const  override= 0;
+  //virtual void ToString(std::ostream& str) const  override;
 
 protected:
 };

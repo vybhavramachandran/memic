@@ -26,6 +26,7 @@ class SECondition;
 class SEAction;
 class TimeUnit;
 class SESubstanceManager;
+
 class SEBloodChemistrySystem;
 class SECardiovascularSystem;
 class SEDrugSystem;
