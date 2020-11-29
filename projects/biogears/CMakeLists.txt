@@ -487,6 +487,10 @@ pybind11_add_module(pybSEDataRequestManager ./libBiogears/src/pybwrappers/cdm/sc
 pybind11_add_module(pybSEDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSEDataRequest.cpp)
 pybind11_add_module(pybSEAsthmaAttack ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEAsthmaAttack.cpp)
 pybind11_add_module(pybSEScalar0To1 ./libBiogears/src/pybwrappers/cdm/properties/pybSEScalar0To1.cpp)
+pybind11_add_module(pybSEBurnWound ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEBurnWound.cpp)
+pybind11_add_module(pybSEAcuteRespiratoryDistress ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEAcuteRespiratoryDistress.cpp)
+pybind11_add_module(pybSEBreathHold ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEBreathHold.cpp)
+pybind11_add_module(pybSEBronchoconstriction ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEBronchoconstriction.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -507,7 +511,10 @@ target_include_directories(pybSEDataRequestManager PRIVATE pybind_include_direct
 target_include_directories(pybSEDataRequest PRIVATE pybind_include_directories)
 target_include_directories(pybSEAsthmaAttack PRIVATE pybind_include_directories)
 target_include_directories(pybSEScalar0To1 PRIVATE pybind_include_directories)
-
+target_include_directories(pybSEBurnWound PRIVATE pybind_include_directories)
+target_include_directories(pybSEAcuteRespiratoryDistress PRIVATE pybind_include_directories)
+target_include_directories(pybSEBreathHold PRIVATE pybind_include_directories)
+target_include_directories(pybSEBronchoconstriction PRIVATE pybind_include_directories)
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
 target_link_libraries(pybcardio PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears python3.8)
@@ -520,7 +527,6 @@ target_link_libraries(pybscalarpressure PRIVATE pybind11::module pybind11::embed
 
 TARGET_LINK_LIBRARIES(pybBioGearsEngine PRIVATE python3.8)
 target_link_libraries(pybBioGearsEngine PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
-
 
 TARGET_LINK_LIBRARIES(pybBioGearsEngineHeader PRIVATE python3.8)
 target_link_libraries(pybBioGearsEngineHeader PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
@@ -539,3 +545,15 @@ target_link_libraries(pybSEAsthmaAttack PRIVATE pybind11::module pybind11::embed
 
 TARGET_LINK_LIBRARIES(pybSEScalar0To1 PRIVATE python3.8)
 target_link_libraries(pybSEScalar0To1 PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEBurnWound PRIVATE python3.8)
+target_link_libraries(pybSEBurnWound PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEAcuteRespiratoryDistress PRIVATE python3.8)
+target_link_libraries(pybSEAcuteRespiratoryDistress PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEBreathHold PRIVATE python3.8)
+target_link_libraries(pybSEBreathHold PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEBronchoconstriction PRIVATE python3.8)
+target_link_libraries(pybSEBronchoconstriction PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)

@@ -15,6 +15,7 @@
 #include <biogears/cdm/scenario/requests/SEThermalCompartmentDataRequest.h>
 #include <biogears/cdm/scenario/requests/SETissueCompartmentDataRequest.h>
 #include <biogears/cdm/substance/SESubstanceManager.h>
+#include <biogears/cdm/properties/SEDecimalFormat.h>
 #include <pybind11/pybind11.h>
 
 
@@ -24,6 +25,8 @@ namespace py = pybind11;
 
 
 PYBIND11_MODULE(pybSEDataRequestManager, m) {
+
+    py::class_<biogears::SEDecimalFormat>(m,"SEDecimalFormat");
 
 
     py::class_<biogears::SEDataRequestManager>(m, "SEDataRequestManager")
@@ -55,7 +58,8 @@ PYBIND11_MODULE(pybSEDataRequestManager, m) {
     .def("CreateEnvironmentDataRequest",&biogears::SEDataRequestManager::CreateEnvironmentDataRequest)
     .def("CreateEquipmentDataRequest",&biogears::SEDataRequestManager::CreateEquipmentDataRequest)
     .def("CreatePatientDataRequest",&biogears::SEDataRequestManager::CreatePatientDataRequest)
-    .def("CreatePhysiologyDataRequest",&biogears::SEDataRequestManager::CreatePhysiologyDataRequest)
+    // .def("CreatePhysiologyDataRequest",&biogears::SEDataRequestManager::CreatePhysiologyDataRequest, py::arg("dfault").none(true))
+    .def("CreatePhysiologyDataRequest",&biogears::SEDataRequestManager::CreatePhysiologyDataRequest,py::arg("dfault") = static_cast<biogears::SEDecimalFormat *>(nullptr))
     .def("CreateSubstanceDataRequest",&biogears::SEDataRequestManager::CreateSubstanceDataRequest)
     .def("CreateGasCompartmentDataRequest",&biogears::SEDataRequestManager::CreateGasCompartmentDataRequest)
     .def("CreateLiquidCompartmentDataRequest",&biogears::SEDataRequestManager::CreateLiquidCompartmentDataRequest)
