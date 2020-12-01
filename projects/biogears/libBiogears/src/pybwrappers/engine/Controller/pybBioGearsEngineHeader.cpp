@@ -11,6 +11,7 @@
 #include <biogears/cdm/system/SESystem.h>
 #include <biogears/engine/Controller/BioGears.h>
 #include <biogears/container/Tree.tci.h>
+#include <biogears/cdm/properties/SEScalarTime.h>
 #include <pybind11/pybind11.h>
 
 
@@ -21,6 +22,8 @@ namespace py = pybind11;
 
 PYBIND11_MODULE(pybBioGearsEngineHeader, m) {
 
+    // py::class_<biogears::SEScalarTime>(m,"SEScalarTime");
+
     py::class_<biogears::BioGearsEngine>(m, "BioGearsEngine")
     .def(py::init<biogears::Logger *>())
     .def(py::init<const char*>())
@@ -29,7 +32,7 @@ PYBIND11_MODULE(pybBioGearsEngineHeader, m) {
     .def(py::init<biogears::Logger*, const char* >())
     .def(py::init<std::string&, std::string&>())
     .def(py::init<char*, char*>())
-    .def("LoadState",py::overload_cast<const char*, const biogears::SEScalarTime* >(&biogears::BioGearsEngine::LoadState))
+    .def("LoadState",py::overload_cast<const char*, const biogears::SEScalarTime* >(&biogears::BioGearsEngine::LoadState),py::arg("file") = "",py::arg("simTime") = nullptr)
     .def("LoadState",py::overload_cast<const std::string&, const biogears::SEScalarTime* >(&biogears::BioGearsEngine::LoadState))
     .def("LoadState",py::overload_cast<const CDM::PhysiologyEngineStateData&, const biogears::SEScalarTime* >(&biogears::BioGearsEngine::LoadState))
     .def("SaveState",py::overload_cast<const char* >(&biogears::BioGearsEngine::SaveState))

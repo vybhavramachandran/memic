@@ -35,8 +35,6 @@ PYBIND11_MODULE(pybSEChestOcclusiveDressing, m) {
     .def("InvalidateSide",&biogears::SEChestOcclusiveDressing::InvalidateSide)
     .def("ToString",py::overload_cast<std::ostream&>(&biogears::SEChestOcclusiveDressing::ToString,py::const_));
 
-
-    
   
 #ifdef VERSION_INFO
     m.attr("__version__") = VERSION_INFO;
