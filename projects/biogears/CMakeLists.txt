@@ -500,6 +500,8 @@ pybind11_add_module(pybSEAirwayObstruction ./libBiogears/src/pybwrappers/cdm/pat
 pybind11_add_module(pybSEChestCompressionForceScale ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEChestCompressionForceScale.cpp)
 pybind11_add_module(pybSEChestOcclusiveDressing ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEChestOcclusiveDressing.cpp)
 pybind11_add_module(pybSEConsciousRespiration ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEConsciousRespiration.cpp)
+pybind11_add_module(pybSEConsumeNutrients ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEConsumeNutrients.cpp)
+pybind11_add_module(pybSEExercise ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEExercise.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -533,6 +535,8 @@ target_include_directories(pybSEAirwayObstruction PRIVATE pybind_include_directo
 target_include_directories(pybSEChestCompressionForceScale PRIVATE pybind_include_directories)
 target_include_directories(pybSEChestOcclusiveDressing PRIVATE pybind_include_directories)
 target_include_directories(pybSEConsciousRespiration PRIVATE pybind_include_directories)
+target_include_directories(pybSEConsumeNutrients PRIVATE pybind_include_directories)
+target_include_directories(pybSEExercise PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -603,3 +607,9 @@ target_link_libraries(pybSEChestOcclusiveDressing PRIVATE pybind11::module pybin
 
 TARGET_LINK_LIBRARIES(pybSEConsciousRespiration PRIVATE python3.8)
 target_link_libraries(pybSEConsciousRespiration PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEConsumeNutrients PRIVATE python3.8)
+target_link_libraries(pybSEConsumeNutrients PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEExercise PRIVATE python3.8)
+target_link_libraries(pybSEExercise PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
