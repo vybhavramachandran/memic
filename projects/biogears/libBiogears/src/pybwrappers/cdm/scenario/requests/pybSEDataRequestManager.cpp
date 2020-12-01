@@ -27,6 +27,7 @@ namespace py = pybind11;
 PYBIND11_MODULE(pybSEDataRequestManager, m) {
 
     py::class_<biogears::SEDecimalFormat>(m,"SEDecimalFormat");
+    // py::class_<biogears::SEPhysiologyDataRequest>(m,"SEPhysiologyDataRequest");
 
 
     py::class_<biogears::SEDataRequestManager>(m, "SEDataRequestManager")
