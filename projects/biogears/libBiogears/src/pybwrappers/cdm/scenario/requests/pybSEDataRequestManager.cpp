@@ -59,7 +59,7 @@ PYBIND11_MODULE(pybSEDataRequestManager, m) {
     .def("CreateEquipmentDataRequest",&biogears::SEDataRequestManager::CreateEquipmentDataRequest)
     .def("CreatePatientDataRequest",&biogears::SEDataRequestManager::CreatePatientDataRequest)
     // .def("CreatePhysiologyDataRequest",&biogears::SEDataRequestManager::CreatePhysiologyDataRequest, py::arg("dfault").none(true))
-    .def("CreatePhysiologyDataRequest",&biogears::SEDataRequestManager::CreatePhysiologyDataRequest,py::arg("dfault") = static_cast<biogears::SEDecimalFormat *>(nullptr))
+    .def("CreatePhysiologyDataRequest",&biogears::SEDataRequestManager::CreatePhysiologyDataRequest,py::arg("dfault") = nullptr)
     .def("CreateSubstanceDataRequest",&biogears::SEDataRequestManager::CreateSubstanceDataRequest)
     .def("CreateGasCompartmentDataRequest",&biogears::SEDataRequestManager::CreateGasCompartmentDataRequest)
     .def("CreateLiquidCompartmentDataRequest",&biogears::SEDataRequestManager::CreateLiquidCompartmentDataRequest)
