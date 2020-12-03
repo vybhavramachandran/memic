@@ -40,7 +40,7 @@ PYBIND11_MODULE(pybSESubstanceNasalDose, m) {
     .def("ToString",py::overload_cast<std::ostream&>(&biogears::SESubstanceNasalDose::ToString,py::const_));
 
    py::class_<biogears::SENasalState>(m, "SENasalState")
-    .def(py::init<const biogears::SENasalState&>())
+    .def(py::init<const biogears::SESubstance&>())
     .def("Clear",&biogears::SENasalState::Clear)
     .def("Load",&biogears::SENasalState::Load)
     .def("Unload",py::overload_cast<>(&biogears::SENasalState::Unload,py::const_))

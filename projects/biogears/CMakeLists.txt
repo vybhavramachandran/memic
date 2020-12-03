@@ -522,8 +522,11 @@ pybind11_add_module(pybSESubstanceBolus ./libBiogears/src/pybwrappers/cdm/patien
 pybind11_add_module(pybSESubstanceCompoundInfusion ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESubstanceCompoundInfusion.cpp)
 pybind11_add_module(pybSESubstanceInfusion ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESubstanceInfusion.cpp)
 pybind11_add_module(pybSESubstanceNasalDose ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESubstanceNasalDose.cpp)
-
-
+pybind11_add_module(pybSESubstanceOralDose ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESubstanceOralDose.cpp)
+pybind11_add_module(pybSETensionPneumothroax ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSETensionPneumothroax.cpp)
+pybind11_add_module(pybSETourniquet ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSETourniquet.cpp)
+pybind11_add_module(pybSEUrinate ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEUrinate.cpp)
+pybind11_add_module(pybSEUseInhaler ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEUseInhaler.cpp)
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
 target_include_directories(pybcardio
@@ -578,6 +581,11 @@ target_include_directories(pybSESubstanceBolus PRIVATE pybind_include_directorie
 target_include_directories(pybSESubstanceCompoundInfusion PRIVATE pybind_include_directories)
 target_include_directories(pybSESubstanceInfusion PRIVATE pybind_include_directories)
 target_include_directories(pybSESubstanceNasalDose PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceOralDose PRIVATE pybind_include_directories)
+target_include_directories(pybSETensionPneumothroax PRIVATE pybind_include_directories)
+target_include_directories(pybSETourniquet PRIVATE pybind_include_directories)
+target_include_directories(pybSEUrinate PRIVATE pybind_include_directories)
+target_include_directories(pybSEUseInhaler PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -715,3 +723,18 @@ target_link_libraries(pybSESubstanceInfusion PRIVATE pybind11::module pybind11::
 
 TARGET_LINK_LIBRARIES(pybSESubstanceNasalDose PRIVATE python3.8)
 target_link_libraries(pybSESubstanceNasalDose PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceOralDose PRIVATE python3.8)
+target_link_libraries(pybSESubstanceOralDose PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSETensionPneumothroax PRIVATE python3.8)
+target_link_libraries(pybSETensionPneumothroax PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSETourniquet PRIVATE python3.8)
+target_link_libraries(pybSETourniquet PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEUrinate PRIVATE python3.8)
+target_link_libraries(pybSEUrinate PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEUseInhaler PRIVATE python3.8)
+target_link_libraries(pybSEUseInhaler PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
