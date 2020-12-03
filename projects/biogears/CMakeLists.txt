@@ -511,6 +511,7 @@ pybind11_add_module(pybSEIntubation ./libBiogears/src/pybwrappers/cdm/patient/ac
 pybind11_add_module(pybSEMechanicalVentilation ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEMechanicalVentilation.cpp)
 pybind11_add_module(pybSENeedleDecompression ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSENeedleDecompression.cpp)
 pybind11_add_module(pybSEOverride ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEOverride.cpp)
+pybind11_add_module(pybSEPainStimulus ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEPainStimulus.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -555,6 +556,7 @@ target_include_directories(pybSEIntubation PRIVATE pybind_include_directories)
 target_include_directories(pybSEMechanicalVentilation PRIVATE pybind_include_directories)
 target_include_directories(pybSENeedleDecompression PRIVATE pybind_include_directories)
 target_include_directories(pybSEOverride PRIVATE pybind_include_directories)
+target_include_directories(pybSEPainStimulus PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -659,3 +661,6 @@ target_link_libraries(pybSENeedleDecompression PRIVATE pybind11::module pybind11
 
 TARGET_LINK_LIBRARIES(pybSEOverride PRIVATE python3.8)
 target_link_libraries(pybSEOverride PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEPainStimulus PRIVATE python3.8)
+target_link_libraries(pybSEPainStimulus PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
