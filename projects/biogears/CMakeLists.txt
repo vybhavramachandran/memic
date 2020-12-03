@@ -512,6 +512,17 @@ pybind11_add_module(pybSEMechanicalVentilation ./libBiogears/src/pybwrappers/cdm
 pybind11_add_module(pybSENeedleDecompression ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSENeedleDecompression.cpp)
 pybind11_add_module(pybSEOverride ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEOverride.cpp)
 pybind11_add_module(pybSEPainStimulus ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEPainStimulus.cpp)
+# pybind11_add_module(pybSEPatientAction ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEPatientAction.cpp)
+pybind11_add_module(pybSEPatientAssessmentRequest ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEPatientAssessmentRequest.cpp)
+pybind11_add_module(pybSEPericardialEffusion ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEPericardialEffusion.cpp)
+pybind11_add_module(pybSEPupillaryResponse ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEPupillaryResponse.cpp)
+pybind11_add_module(pybSESleep ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESleep.cpp)
+# pybind11_add_module(pybSESubstanceAdministration ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESubstanceAdministration.cpp)
+pybind11_add_module(pybSESubstanceBolus ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESubstanceBolus.cpp)
+pybind11_add_module(pybSESubstanceCompoundInfusion ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESubstanceCompoundInfusion.cpp)
+pybind11_add_module(pybSESubstanceInfusion ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESubstanceInfusion.cpp)
+pybind11_add_module(pybSESubstanceNasalDose ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSESubstanceNasalDose.cpp)
+
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -557,6 +568,16 @@ target_include_directories(pybSEMechanicalVentilation PRIVATE pybind_include_dir
 target_include_directories(pybSENeedleDecompression PRIVATE pybind_include_directories)
 target_include_directories(pybSEOverride PRIVATE pybind_include_directories)
 target_include_directories(pybSEPainStimulus PRIVATE pybind_include_directories)
+# target_include_directories(pybSEPatientAction PRIVATE pybind_include_directories)
+target_include_directories(pybSEPatientAssessmentRequest PRIVATE pybind_include_directories)
+target_include_directories(pybSEPericardialEffusion PRIVATE pybind_include_directories)
+target_include_directories(pybSEPupillaryResponse PRIVATE pybind_include_directories)
+target_include_directories(pybSESleep PRIVATE pybind_include_directories)
+# target_include_directories(pybSESubstanceAdministration PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceBolus PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceCompoundInfusion PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceInfusion PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceNasalDose PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -664,3 +685,33 @@ target_link_libraries(pybSEOverride PRIVATE pybind11::module pybind11::embed pyb
 
 TARGET_LINK_LIBRARIES(pybSEPainStimulus PRIVATE python3.8)
 target_link_libraries(pybSEPainStimulus PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+# TARGET_LINK_LIBRARIES(pybSEPatientAction PRIVATE python3.8)
+# target_link_libraries(pybSEPatientAction PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEPatientAssessmentRequest PRIVATE python3.8)
+target_link_libraries(pybSEPatientAssessmentRequest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEPericardialEffusion PRIVATE python3.8)
+target_link_libraries(pybSEPericardialEffusion PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEPupillaryResponse PRIVATE python3.8)
+target_link_libraries(pybSEPupillaryResponse PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESleep PRIVATE python3.8)
+target_link_libraries(pybSESleep PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+# TARGET_LINK_LIBRARIES(pybSESubstanceAdministration PRIVATE python3.8)
+# target_link_libraries(pybSESubstanceAdministration PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceBolus PRIVATE python3.8)
+target_link_libraries(pybSESubstanceBolus PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceCompoundInfusion PRIVATE python3.8)
+target_link_libraries(pybSESubstanceCompoundInfusion PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceInfusion PRIVATE python3.8)
+target_link_libraries(pybSESubstanceInfusion PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceNasalDose PRIVATE python3.8)
+target_link_libraries(pybSESubstanceNasalDose PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
