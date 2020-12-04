@@ -527,6 +527,11 @@ pybind11_add_module(pybSETensionPneumothroax ./libBiogears/src/pybwrappers/cdm/p
 pybind11_add_module(pybSETourniquet ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSETourniquet.cpp)
 pybind11_add_module(pybSEUrinate ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEUrinate.cpp)
 pybind11_add_module(pybSEUseInhaler ./libBiogears/src/pybwrappers/cdm/patient/actions/pybSEUseInhaler.cpp)
+pybind11_add_module(pybSECompleteBloodCount ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSECompleteBloodCount.cpp)
+pybind11_add_module(pybSEComprehensiveMetabolicPanel ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSEComprehensiveMetabolicPanel.cpp)
+# pybind11_add_module(pybSEPsychomotorVigilanceTask ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSEPsychomotorVigilanceTask.cpp)
+pybind11_add_module(pybSEPulmonaryFunctionTest ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSEPulmonaryFunctionTest.cpp)
+
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
 target_include_directories(pybcardio
@@ -586,6 +591,10 @@ target_include_directories(pybSETensionPneumothroax PRIVATE pybind_include_direc
 target_include_directories(pybSETourniquet PRIVATE pybind_include_directories)
 target_include_directories(pybSEUrinate PRIVATE pybind_include_directories)
 target_include_directories(pybSEUseInhaler PRIVATE pybind_include_directories)
+target_include_directories(pybSECompleteBloodCount PRIVATE pybind_include_directories)
+target_include_directories(pybSEComprehensiveMetabolicPanel PRIVATE pybind_include_directories)
+# target_include_directories(pybSEPsychomotorVigilanceTask PRIVATE pybind_include_directories)
+target_include_directories(pybSEPulmonaryFunctionTest PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -738,3 +747,15 @@ target_link_libraries(pybSEUrinate PRIVATE pybind11::module pybind11::embed pybi
 
 TARGET_LINK_LIBRARIES(pybSEUseInhaler PRIVATE python3.8)
 target_link_libraries(pybSEUseInhaler PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSECompleteBloodCount PRIVATE python3.8)
+target_link_libraries(pybSECompleteBloodCount PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEComprehensiveMetabolicPanel PRIVATE python3.8)
+target_link_libraries(pybSEComprehensiveMetabolicPanel PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+# TARGET_LINK_LIBRARIES(pybSEPsychomotorVigilanceTask PRIVATE python3.8)
+# target_link_libraries(pybSEPsychomotorVigilanceTask PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEPulmonaryFunctionTest PRIVATE python3.8)
+target_link_libraries(pybSEPulmonaryFunctionTest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
