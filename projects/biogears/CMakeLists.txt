@@ -540,7 +540,13 @@ pybind11_add_module(pybSEChronicPericardialEffusion ./libBiogears/src/pybwrapper
 pybind11_add_module(pybSEChronicRenalStenosis ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEChronicRenalStenosis.cpp)
 pybind11_add_module(pybSEChronicVentricularSystolicDysfunction ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEChronicVentricularSystolicDysfunction.cpp)
 pybind11_add_module(pybSEDehydration ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEDehydration.cpp)
-
+pybind11_add_module(pybSEDiabetesType1 ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEDiabetesType1.cpp)
+pybind11_add_module(pybSEDiabetesType2 ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEDiabetesType2.cpp)
+pybind11_add_module(pybSEImpairedAlveolarExchange ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEImpairedAlveolarExchange.cpp)
+pybind11_add_module(pybSELobarPneumonia ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSELobarPneumonia.cpp)
+pybind11_add_module(pybSEStarvation ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEStarvation.cpp)
+pybind11_add_module(pybSENutrition ./libBiogears/src/pybwrappers/cdm/patient/pybSENutrition.cpp)
+pybind11_add_module(pybSEPatient ./libBiogears/src/pybwrappers/cdm/patient/pybSEPatient.cpp)
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
 target_include_directories(pybcardio
@@ -613,6 +619,13 @@ target_include_directories(pybSEChronicPericardialEffusion PRIVATE pybind_includ
 target_include_directories(pybSEChronicRenalStenosis PRIVATE pybind_include_directories)
 target_include_directories(pybSEChronicVentricularSystolicDysfunction PRIVATE pybind_include_directories)
 target_include_directories(pybSEDehydration PRIVATE pybind_include_directories)
+target_include_directories(pybSEDiabetesType1 PRIVATE pybind_include_directories)
+target_include_directories(pybSEDiabetesType2 PRIVATE pybind_include_directories)
+target_include_directories(pybSEImpairedAlveolarExchange PRIVATE pybind_include_directories)
+target_include_directories(pybSELobarPneumonia PRIVATE pybind_include_directories)
+target_include_directories(pybSEStarvation PRIVATE pybind_include_directories)
+target_include_directories(pybSENutrition PRIVATE pybind_include_directories)
+target_include_directories(pybSEPatient PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -804,3 +817,24 @@ target_link_libraries(pybSEChronicVentricularSystolicDysfunction PRIVATE pybind1
 
 TARGET_LINK_LIBRARIES(pybSEDehydration PRIVATE python3.8)
 target_link_libraries(pybSEDehydration PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEDiabetesType1 PRIVATE python3.8)
+target_link_libraries(pybSEDiabetesType1 PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEDiabetesType2 PRIVATE python3.8)
+target_link_libraries(pybSEDiabetesType2 PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEImpairedAlveolarExchange PRIVATE python3.8)
+target_link_libraries(pybSEImpairedAlveolarExchange PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSELobarPneumonia PRIVATE python3.8)
+target_link_libraries(pybSELobarPneumonia PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEStarvation PRIVATE python3.8)
+target_link_libraries(pybSEStarvation PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSENutrition PRIVATE python3.8)
+target_link_libraries(pybSENutrition PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEPatient PRIVATE python3.8)
+target_link_libraries(pybSEPatient PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
