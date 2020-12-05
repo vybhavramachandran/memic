@@ -531,6 +531,15 @@ pybind11_add_module(pybSECompleteBloodCount ./libBiogears/src/pybwrappers/cdm/pa
 pybind11_add_module(pybSEComprehensiveMetabolicPanel ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSEComprehensiveMetabolicPanel.cpp)
 # pybind11_add_module(pybSEPsychomotorVigilanceTask ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSEPsychomotorVigilanceTask.cpp)
 pybind11_add_module(pybSEPulmonaryFunctionTest ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSEPulmonaryFunctionTest.cpp)
+pybind11_add_module(pybSESequentialOrganFailureAssessment ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSESequentialOrganFailureAssessment.cpp)
+pybind11_add_module(pybSEUrinalysis ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSEUrinalysis.cpp)
+pybind11_add_module(pybSEUrinalysisMicroscopic ./libBiogears/src/pybwrappers/cdm/patient/assessments/pybSEUrinalysisMicroscopic.cpp)
+pybind11_add_module(pybSEChronicAnemia ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEChronicAnemia.cpp)
+pybind11_add_module(pybSEChronicObstructivePulmonaryDisease ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEChronicObstructivePulmonaryDisease.cpp)
+pybind11_add_module(pybSEChronicPericardialEffusion ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEChronicPericardialEffusion.cpp)
+pybind11_add_module(pybSEChronicRenalStenosis ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEChronicRenalStenosis.cpp)
+pybind11_add_module(pybSEChronicVentricularSystolicDysfunction ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEChronicVentricularSystolicDysfunction.cpp)
+pybind11_add_module(pybSEDehydration ./libBiogears/src/pybwrappers/cdm/patient/conditions/pybSEDehydration.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -595,6 +604,15 @@ target_include_directories(pybSECompleteBloodCount PRIVATE pybind_include_direct
 target_include_directories(pybSEComprehensiveMetabolicPanel PRIVATE pybind_include_directories)
 # target_include_directories(pybSEPsychomotorVigilanceTask PRIVATE pybind_include_directories)
 target_include_directories(pybSEPulmonaryFunctionTest PRIVATE pybind_include_directories)
+target_include_directories(pybSESequentialOrganFailureAssessment PRIVATE pybind_include_directories)
+target_include_directories(pybSEUrinalysis PRIVATE pybind_include_directories)
+target_include_directories(pybSEUrinalysisMicroscopic PRIVATE pybind_include_directories)
+target_include_directories(pybSEChronicAnemia PRIVATE pybind_include_directories)
+target_include_directories(pybSEChronicObstructivePulmonaryDisease PRIVATE pybind_include_directories)
+target_include_directories(pybSEChronicPericardialEffusion PRIVATE pybind_include_directories)
+target_include_directories(pybSEChronicRenalStenosis PRIVATE pybind_include_directories)
+target_include_directories(pybSEChronicVentricularSystolicDysfunction PRIVATE pybind_include_directories)
+target_include_directories(pybSEDehydration PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -759,3 +777,30 @@ target_link_libraries(pybSEComprehensiveMetabolicPanel PRIVATE pybind11::module 
 
 TARGET_LINK_LIBRARIES(pybSEPulmonaryFunctionTest PRIVATE python3.8)
 target_link_libraries(pybSEPulmonaryFunctionTest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESequentialOrganFailureAssessment PRIVATE python3.8)
+target_link_libraries(pybSESequentialOrganFailureAssessment PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEUrinalysis PRIVATE python3.8)
+target_link_libraries(pybSEUrinalysis PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEUrinalysisMicroscopic PRIVATE python3.8)
+target_link_libraries(pybSEUrinalysisMicroscopic PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEChronicAnemia PRIVATE python3.8)
+target_link_libraries(pybSEChronicAnemia PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEChronicObstructivePulmonaryDisease PRIVATE python3.8)
+target_link_libraries(pybSEChronicObstructivePulmonaryDisease PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEChronicPericardialEffusion PRIVATE python3.8)
+target_link_libraries(pybSEChronicPericardialEffusion PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEChronicRenalStenosis PRIVATE python3.8)
+target_link_libraries(pybSEChronicRenalStenosis PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEChronicVentricularSystolicDysfunction PRIVATE python3.8)
+target_link_libraries(pybSEChronicVentricularSystolicDysfunction PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEDehydration PRIVATE python3.8)
+target_link_libraries(pybSEDehydration PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
