@@ -557,6 +557,10 @@ pybind11_add_module(pybSEPatientDataRequest ./libBiogears/src/pybwrappers/cdm/sc
 pybind11_add_module(pybSESubstanceDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSESubstanceDataRequest.cpp)
 pybind11_add_module(pybSEThermalCompartmentDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSEThermalCompartmentDataRequest.cpp)
 pybind11_add_module(pybSETissueCompartmentDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSETissueCompartmentDataRequest.cpp)
+pybind11_add_module(pybSEActionManager ./libBiogears/src/pybwrappers/cdm/scenario/pybSEActionManager.cpp)
+pybind11_add_module(pybSEAdvanceTime ./libBiogears/src/pybwrappers/cdm/scenario/pybSEAdvanceTime.cpp)
+pybind11_add_module(pybSEAnesthesiaMachineActionCollection ./libBiogears/src/pybwrappers/cdm/scenario/pybSEAnesthesiaMachineActionCollection.cpp)
+
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -647,6 +651,9 @@ target_include_directories(pybSEPatientDataRequest PRIVATE pybind_include_direct
 target_include_directories(pybSESubstanceDataRequest PRIVATE pybind_include_directories)
 target_include_directories(pybSEThermalCompartmentDataRequest PRIVATE pybind_include_directories)
 target_include_directories(pybSETissueCompartmentDataRequest PRIVATE pybind_include_directories)
+target_include_directories(pybSEActionManager PRIVATE pybind_include_directories)
+target_include_directories(pybSEAdvanceTime PRIVATE pybind_include_directories)
+target_include_directories(pybSEAnesthesiaMachineActionCollection PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -889,3 +896,13 @@ target_link_libraries(pybSEThermalCompartmentDataRequest PRIVATE pybind11::modul
 
 TARGET_LINK_LIBRARIES(pybSETissueCompartmentDataRequest PRIVATE python3.8)
 target_link_libraries(pybSETissueCompartmentDataRequest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEActionManager PRIVATE python3.8)
+target_link_libraries(pybSEActionManager PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEAdvanceTime PRIVATE python3.8)
+target_link_libraries(pybSEAdvanceTime PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEAnesthesiaMachineActionCollection PRIVATE python3.8)
+target_link_libraries(pybSEAnesthesiaMachineActionCollection PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
