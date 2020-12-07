@@ -552,6 +552,11 @@ pybind11_add_module(pybSECompartmentSubstanceDataRequest ./libBiogears/src/pybwr
 pybind11_add_module(pybSEEnvironmentDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSEEnvironmentDataRequest.cpp)
 pybind11_add_module(pybSEEquipmentDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSEEquipmentDataRequest.cpp)
 pybind11_add_module(pybSEGasCompartmentDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSEGasCompartmentDataRequest.cpp)
+pybind11_add_module(pybSELiquidCompartmentDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSELiquidCompartmentDataRequest.cpp)
+pybind11_add_module(pybSEPatientDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSEPatientDataRequest.cpp)
+pybind11_add_module(pybSESubstanceDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSESubstanceDataRequest.cpp)
+pybind11_add_module(pybSEThermalCompartmentDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSEThermalCompartmentDataRequest.cpp)
+pybind11_add_module(pybSETissueCompartmentDataRequest ./libBiogears/src/pybwrappers/cdm/scenario/requests/pybSETissueCompartmentDataRequest.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -637,6 +642,11 @@ target_include_directories(pybSECompartmentSubstanceDataRequest PRIVATE pybind_i
 target_include_directories(pybSEEnvironmentDataRequest PRIVATE pybind_include_directories)
 target_include_directories(pybSEEquipmentDataRequest PRIVATE pybind_include_directories)
 target_include_directories(pybSEGasCompartmentDataRequest PRIVATE pybind_include_directories)
+target_include_directories(pybSELiquidCompartmentDataRequest PRIVATE pybind_include_directories)
+target_include_directories(pybSEPatientDataRequest PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceDataRequest PRIVATE pybind_include_directories)
+target_include_directories(pybSEThermalCompartmentDataRequest PRIVATE pybind_include_directories)
+target_include_directories(pybSETissueCompartmentDataRequest PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -864,3 +874,18 @@ target_link_libraries(pybSEEquipmentDataRequest PRIVATE pybind11::module pybind1
 
 TARGET_LINK_LIBRARIES(pybSEGasCompartmentDataRequest PRIVATE python3.8)
 target_link_libraries(pybSEGasCompartmentDataRequest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSELiquidCompartmentDataRequest PRIVATE python3.8)
+target_link_libraries(pybSELiquidCompartmentDataRequest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEPatientDataRequest PRIVATE python3.8)
+target_link_libraries(pybSEPatientDataRequest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceDataRequest PRIVATE python3.8)
+target_link_libraries(pybSESubstanceDataRequest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEThermalCompartmentDataRequest PRIVATE python3.8)
+target_link_libraries(pybSEThermalCompartmentDataRequest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSETissueCompartmentDataRequest PRIVATE python3.8)
+target_link_libraries(pybSETissueCompartmentDataRequest PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
