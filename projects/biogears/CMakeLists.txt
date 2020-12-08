@@ -563,6 +563,13 @@ pybind11_add_module(pybSEAnesthesiaMachineActionCollection ./libBiogears/src/pyb
 pybind11_add_module(pybSEConditionManager ./libBiogears/src/pybwrappers/cdm/scenario/pybSEConditionManager.cpp)
 pybind11_add_module(pybSEEnvironmentActionCollection ./libBiogears/src/pybwrappers/cdm/scenario/pybSEEnvironmentActionCollection.cpp)
 pybind11_add_module(pybSEInhalerActionCollection ./libBiogears/src/pybwrappers/cdm/scenario/pybSEInhalerActionCollection.cpp)
+pybind11_add_module(pybSEPatientActionCollection /opt/biogears/core/projects/biogears/libBiogears/src/pybwrappers/cdm/scenario/pybSEPatientActionCollection.cpp)
+pybind11_add_module(pybSEScenario ./libBiogears/src/pybwrappers/cdm/scenario/pybSEScenario.cpp)
+pybind11_add_module(pybSEScenarioAutoSerialization ./libBiogears/src/pybwrappers/cdm/scenario/pybSEScenarioAutoSerialization.cpp)
+pybind11_add_module(pybSEScenarioExec ./libBiogears/src/pybwrappers/cdm/scenario/pybSEScenarioExec.cpp)
+pybind11_add_module(pybSEScenarioInitialParameters ./libBiogears/src/pybwrappers/cdm/scenario/pybSEScenarioInitialParameters.cpp)
+pybind11_add_module(pybSESerializeState ./libBiogears/src/pybwrappers/cdm/scenario/pybSESerializeState.cpp)
+pybind11_add_module(pybSESubstance ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstance.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -659,6 +666,13 @@ target_include_directories(pybSEAnesthesiaMachineActionCollection PRIVATE pybind
 target_include_directories(pybSEConditionManager PRIVATE pybind_include_directories)
 target_include_directories(pybSEEnvironmentActionCollection PRIVATE pybind_include_directories)
 target_include_directories(pybSEInhalerActionCollection PRIVATE pybind_include_directories)
+target_include_directories(pybSEPatientActionCollection PRIVATE pybind_include_directories)
+target_include_directories(pybSEScenario PRIVATE pybind_include_directories)
+target_include_directories(pybSEScenarioAutoSerialization PRIVATE pybind_include_directories)
+target_include_directories(pybSEScenarioExec PRIVATE pybind_include_directories)
+target_include_directories(pybSEScenarioInitialParameters PRIVATE pybind_include_directories)
+target_include_directories(pybSESerializeState PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstance PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -923,3 +937,24 @@ target_link_libraries(pybSEEnvironmentActionCollection PRIVATE pybind11::module 
 
 TARGET_LINK_LIBRARIES(pybSEInhalerActionCollection PRIVATE python3.8)
 target_link_libraries(pybSEInhalerActionCollection PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEPatientActionCollection PRIVATE python3.8)
+target_link_libraries(pybSEPatientActionCollection PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEScenario PRIVATE python3.8)
+target_link_libraries(pybSEScenario PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEScenarioAutoSerialization PRIVATE python3.8)
+target_link_libraries(pybSEScenarioAutoSerialization PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEScenarioExec PRIVATE python3.8)
+target_link_libraries(pybSEScenarioExec PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSEScenarioInitialParameters PRIVATE python3.8)
+target_link_libraries(pybSEScenarioInitialParameters PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESerializeState PRIVATE python3.8)
+target_link_libraries(pybSESerializeState PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstance PRIVATE python3.8)
+target_link_libraries(pybSESubstance PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
