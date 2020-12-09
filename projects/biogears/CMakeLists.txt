@@ -578,6 +578,7 @@ pybind11_add_module(pybSESubstanceFraction ./libBiogears/src/pybwrappers/cdm/sub
 pybind11_add_module(pybSESubstancePharmacodynamics ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstancePharmacodynamics.cpp)
 pybind11_add_module(pybSESubstancePharmacokinetics ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstancePharmacokinetics.cpp)
 pybind11_add_module(pybSESubstancePhysicochemicals ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstancePhysicochemicals.cpp)
+pybind11_add_module(pybSESubstanceTissuePharmacokinetics ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstanceTissuePharmacokinetics.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -689,6 +690,7 @@ target_include_directories(pybSESubstanceFraction PRIVATE pybind_include_directo
 target_include_directories(pybSESubstancePharmacodynamics PRIVATE pybind_include_directories)
 target_include_directories(pybSESubstancePharmacokinetics PRIVATE pybind_include_directories)
 target_include_directories(pybSESubstancePhysicochemicals PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceTissuePharmacokinetics PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -1001,4 +1003,8 @@ target_link_libraries(pybSESubstancePharmacokinetics PRIVATE pybind11::module py
 
 TARGET_LINK_LIBRARIES(pybSESubstancePhysicochemicals PRIVATE python3.8)
 target_link_libraries(pybSESubstancePhysicochemicals PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+
+TARGET_LINK_LIBRARIES(pybSESubstanceTissuePharmacokinetics PRIVATE python3.8)
+target_link_libraries(pybSESubstanceTissuePharmacokinetics PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
 
