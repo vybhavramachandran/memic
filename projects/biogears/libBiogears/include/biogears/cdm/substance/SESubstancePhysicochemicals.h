@@ -13,9 +13,9 @@ specific language governing permissions and limitations under the License.
 #pragma once
 #include <biogears/cdm/CommonDataModel.h>
 #include <biogears/exports.h>
-
+#include <biogears/cdm/properties/SEScalar.h>
 #include <biogears/schema/cdm/Substance.hxx>
-
+#include <biogears/cdm/properties/SEScalarFraction.h>
 CDM_BIND_DECL(SubstancePhysicochemicalData)
 
 namespace biogears {

@@ -572,6 +572,12 @@ pybind11_add_module(pybSESerializeState ./libBiogears/src/pybwrappers/cdm/scenar
 pybind11_add_module(pybSESubstance ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstance.cpp)
 pybind11_add_module(pybSESubstanceAerosolization ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstanceAerosolization.cpp)
 pybind11_add_module(pybSESubstanceClearance ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstanceClearance.cpp)
+pybind11_add_module(pybSESubstanceCompound ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstanceCompound.cpp)
+pybind11_add_module(pybSESubstanceConcentration ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstanceConcentration.cpp)
+pybind11_add_module(pybSESubstanceFraction ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstanceFraction.cpp)
+pybind11_add_module(pybSESubstancePharmacodynamics ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstancePharmacodynamics.cpp)
+pybind11_add_module(pybSESubstancePharmacokinetics ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstancePharmacokinetics.cpp)
+pybind11_add_module(pybSESubstancePhysicochemicals ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstancePhysicochemicals.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -677,6 +683,12 @@ target_include_directories(pybSESerializeState PRIVATE pybind_include_directorie
 target_include_directories(pybSESubstance PRIVATE pybind_include_directories)
 target_include_directories(pybSESubstanceAerosolization PRIVATE pybind_include_directories)
 target_include_directories(pybSESubstanceClearance PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceCompound PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceConcentration PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceFraction PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstancePharmacodynamics PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstancePharmacokinetics PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstancePhysicochemicals PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -968,3 +980,25 @@ target_link_libraries(pybSESubstanceAerosolization PRIVATE pybind11::module pybi
 
 TARGET_LINK_LIBRARIES(pybSESubstanceClearance PRIVATE python3.8)
 target_link_libraries(pybSESubstanceClearance PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceCompound PRIVATE python3.8)
+target_link_libraries(pybSESubstanceCompound PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceConcentration PRIVATE python3.8)
+target_link_libraries(pybSESubstanceConcentration PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceFraction PRIVATE python3.8)
+target_link_libraries(pybSESubstanceFraction PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+
+TARGET_LINK_LIBRARIES(pybSESubstancePharmacodynamics PRIVATE python3.8)
+target_link_libraries(pybSESubstancePharmacodynamics PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+
+TARGET_LINK_LIBRARIES(pybSESubstancePharmacokinetics PRIVATE python3.8)
+target_link_libraries(pybSESubstancePharmacokinetics PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+
+TARGET_LINK_LIBRARIES(pybSESubstancePhysicochemicals PRIVATE python3.8)
+target_link_libraries(pybSESubstancePhysicochemicals PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
