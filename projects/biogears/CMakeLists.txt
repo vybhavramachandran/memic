@@ -570,6 +570,8 @@ pybind11_add_module(pybSEScenarioExec ./libBiogears/src/pybwrappers/cdm/scenario
 pybind11_add_module(pybSEScenarioInitialParameters ./libBiogears/src/pybwrappers/cdm/scenario/pybSEScenarioInitialParameters.cpp)
 pybind11_add_module(pybSESerializeState ./libBiogears/src/pybwrappers/cdm/scenario/pybSESerializeState.cpp)
 pybind11_add_module(pybSESubstance ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstance.cpp)
+pybind11_add_module(pybSESubstanceAerosolization ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstanceAerosolization.cpp)
+pybind11_add_module(pybSESubstanceClearance ./libBiogears/src/pybwrappers/cdm/substance/pybSESubstanceClearance.cpp)
 
 set(pybind_include_directories /usr/include/python3.8 /home/vybhav/anaconda3/include/python3.8 /home/vybhav/Downloads/pybind11/include /opt/biogears/core/build/../projects/biogears/libCDM/include /opt/biogears/core/build/../build/projects/biogears /opt/biogears/core/projects/biogears/libBiogears/include  /opt/biogears/core/projects/biogears-common/include /opt/biogears/core/build/projects/biogears/biogears/schema /opt/biogears/core/projects/biogears/libBiogears/include/biogears/cdm/engine/)
 
@@ -673,6 +675,8 @@ target_include_directories(pybSEScenarioExec PRIVATE pybind_include_directories)
 target_include_directories(pybSEScenarioInitialParameters PRIVATE pybind_include_directories)
 target_include_directories(pybSESerializeState PRIVATE pybind_include_directories)
 target_include_directories(pybSESubstance PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceAerosolization PRIVATE pybind_include_directories)
+target_include_directories(pybSESubstanceClearance PRIVATE pybind_include_directories)
 
 
 TARGET_LINK_LIBRARIES(pybcardio PRIVATE python3.8)
@@ -958,3 +962,9 @@ target_link_libraries(pybSESerializeState PRIVATE pybind11::module pybind11::emb
 
 TARGET_LINK_LIBRARIES(pybSESubstance PRIVATE python3.8)
 target_link_libraries(pybSESubstance PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceAerosolization PRIVATE python3.8)
+target_link_libraries(pybSESubstanceAerosolization PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
+
+TARGET_LINK_LIBRARIES(pybSESubstanceClearance PRIVATE python3.8)
+target_link_libraries(pybSESubstanceClearance PRIVATE pybind11::module pybind11::embed pybind11::lto libbiogears libbiogears_common python3.8)
