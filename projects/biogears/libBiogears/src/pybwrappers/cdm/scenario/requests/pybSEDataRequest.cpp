@@ -18,7 +18,7 @@ namespace py = pybind11;
 
 
 PYBIND11_MODULE(pybSEDataRequest, m) {
-
+// py::arg("dfault") = nullptr
 
     py::class_<biogears::SEDataRequest>(m, "SEDataRequest")
     .def("Clear",&biogears::SEDataRequest::Clear)
@@ -40,8 +40,8 @@ PYBIND11_MODULE(pybSEDataRequest, m) {
     .def("SetUnit",&biogears::SEDataRequest::SetUnit)
     .def("HasUnit",&biogears::SEDataRequest::HasUnit)
     .def("InvalidateUnit",&biogears::SEDataRequest::InvalidateUnit)
-    .def("Set",py::overload_cast<const char*,const char*>(&biogears::SEDataRequest::Set))
-    .def("Set",py::overload_cast<const std::string&,const std::string&>(&biogears::SEDataRequest::Set))
+    .def("Set",py::overload_cast<const char*,const char*>(&biogears::SEDataRequest::Set),py::arg("name"),py::arg("unit")="")
+    .def("Set",py::overload_cast<const std::string&,const std::string&>(&biogears::SEDataRequest::Set),py::arg("name"),py::arg("unit")="")
     .def("Set",py::overload_cast<const char*,const biogears::CCompoundUnit& >(&biogears::SEDataRequest::Set))
     .def("Set",py::overload_cast<const std::string&,const biogears::CCompoundUnit&>(&biogears::SEDataRequest::Set));
 
