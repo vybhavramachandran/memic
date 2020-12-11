@@ -26,7 +26,7 @@ bg.GetEngineTrack().GetDataRequestManager().CreatePhysiologyDataRequest().Set('T
 bg.GetEngineTrack().GetDataRequestManager().CreatePhysiologyDataRequest().Set('TotalWorkRateLevel')
 
 
-bg.GetEngineTrack().GetDataRequestManager().SetResultsFileName('HowToExercise.csv')
+bg.GetEngineTrack().GetDataRequestManager().SetResultsFilename('HowToExercise.csv')
 
 bg.AdvanceModelTime(20, src_cdm_properties_constants["TimeUnit::s"])
 
