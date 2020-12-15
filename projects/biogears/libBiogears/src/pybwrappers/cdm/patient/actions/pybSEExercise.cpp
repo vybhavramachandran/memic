@@ -20,12 +20,26 @@ PYBIND11_MODULE(pybSEExercise, m)
 {
 
   py::class_<biogears::SEExercise::SEGeneric>(m, "SEExerciseSEGeneric")
+    .def(py::init<>())
     .def_readwrite("DesiredWorkRate", &biogears::SEExercise::SEGeneric::DesiredWorkRate)
     .def_readwrite("Intensity", &biogears::SEExercise::SEGeneric::Intensity);
 
-  py::class_<biogears::SEExercise::SECycling>(m, "SEExerciseSECycling");
-  py::class_<biogears::SEExercise::SERunning>(m, "SEExerciseSERunning");
-  py::class_<biogears::SEExercise::SEStrengthTraining>(m, "SEExerciseSEStrengthTraining");
+  py::class_<biogears::SEExercise::SECycling>(m, "SEExerciseSECycling")
+    .def(py::init<>())
+    .def_readwrite("CadenceCycle", &biogears::SEExercise::SECycling::CadenceCycle)
+    .def_readwrite("PowerCycle", &biogears::SEExercise::SECycling::PowerCycle)
+    .def_readwrite("AddedWeight", &biogears::SEExercise::SECycling::AddedWeight);
+
+  py::class_<biogears::SEExercise::SERunning>(m, "SEExerciseSERunning")
+    .def(py::init<>())
+    .def_readwrite("SpeedRun", &biogears::SEExercise::SERunning::SpeedRun)
+    .def_readwrite("InclineRun", &biogears::SEExercise::SERunning::InclineRun)
+    .def_readwrite("AddedWeight", &biogears::SEExercise::SERunning::AddedWeight);
+
+  py::class_<biogears::SEExercise::SEStrengthTraining>(m, "SEExerciseSEStrengthTraining")
+    .def(py::init<>())
+    .def_readwrite("WeightStrength", &biogears::SEExercise::SEStrengthTraining::WeightStrength)
+    .def_readwrite("RepsStrength", &biogears::SEExercise::SEStrengthTraining::RepsStrength);
 
   // py::enum_<biogears::SEExercise::ExerciseType>(ExerciseType, "ExerciseType")
   // .value("GENERIC", biogears::SEExercise::ExerciseType::GENERIC)
@@ -37,7 +51,6 @@ PYBIND11_MODULE(pybSEExercise, m)
   // .export_values();
 
   py::module_::import("pybSEPatientAction");
-
 
   py::class_<biogears::SEExercise, biogears::SEPatientAction>(m, "SEExercise")
     .def(py::init<>())

@@ -5,21 +5,20 @@
 #include <biogears/cdm/properties/SEScalar0To1.h>
 #include <string>
 #include <pybind11/pybind11.h>
-#include <biogears/cdm/patient/actions/SEPatientAction.h>
-#include <biogears/schema/cdm/PatientActions.hxx>
 #include <biogears/schema/cdm/Scenario.hxx>
 #include <biogears/cdm/scenario/SEAction.h>
+#include <biogears/cdm/utils/Logger.h>
 
 namespace py = pybind11;
 
 
 
 
-PYBIND11_MODULE(pybSEPatientAction, m) {
+PYBIND11_MODULE(pybSEAction, m) {
 
-  py::module_::import("pybSEAction");
+  py::module_::import("pybLogger");
 
-    py::class_<biogears::SEPatientAction,biogears::SEAction>(m, "SEPatientAction");
+    py::class_<biogears::SEAction,biogears::Loggable>(m, "SEAction");
     // .def(py::init<>())    
     // .def("Clear",&biogears::SEPatientAction::Clear)
     // .def("IsValid",&biogears::SEPatientAction::IsValid)

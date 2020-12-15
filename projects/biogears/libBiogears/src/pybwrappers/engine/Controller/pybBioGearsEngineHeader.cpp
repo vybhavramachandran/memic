@@ -45,7 +45,7 @@ PYBIND11_MODULE(pybBioGearsEngineHeader, m) {
     .def("GetConfiguration",py::overload_cast<>(&biogears::BioGearsEngine::GetConfiguration))
     .def("GetTimeStep",py::overload_cast<const biogears::TimeUnit&>(&biogears::BioGearsEngine::GetTimeStep))
     .def("GetSimulationTime",py::overload_cast<const biogears::TimeUnit&>(&biogears::BioGearsEngine::GetSimulationTime))
-     .def("ProcessAction",py::overload_cast<const biogears::SEAction&>(&biogears::BioGearsEngine::ProcessAction))
+    .def("ProcessAction",py::overload_cast<const biogears::SEAction&>(&biogears::BioGearsEngine::ProcessAction))
     .def("GetSubstanceManager",py::overload_cast<>(&biogears::BioGearsEngine::GetSubstanceManager))
     .def("SetEventHandler",py::overload_cast<biogears::SEEventHandler*>(&biogears::BioGearsEngine::SetEventHandler))
     .def("GetPatient",py::overload_cast<>(&biogears::BioGearsEngine::GetPatient))

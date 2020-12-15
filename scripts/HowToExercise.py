@@ -5,6 +5,9 @@ import pybPhysiologyEngineTrack
 import pybSEDataRequest
 import pybSEDataRequestManager
 import pybSEPhysiologyDataRequest
+import pybSEScalar0To1
+import pybSEExercise
+
 from src_cdm_properties_constants import *
 
 var_logger = pybLogger.Logger("HowToExercise.log","")
@@ -33,4 +36,3 @@ bg.GetEngineTrack().GetDataRequestManager().SetResultsFilename('HowToExercise.cs
 bg.AdvanceModelTime(20.0)
 
 bg.GetLogger().Info("The patient is nice and healthy")
-bg.Get
