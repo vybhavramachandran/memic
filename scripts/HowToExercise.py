@@ -28,8 +28,9 @@ bg.GetEngineTrack().GetDataRequestManager().CreatePhysiologyDataRequest().Set('T
 
 bg.GetEngineTrack().GetDataRequestManager().SetResultsFilename('HowToExercise.csv')
 
-bg.AdvanceModelTime(20, src_cdm_properties_constants["TimeUnit::s"])
+# bg.AdvanceModelTime(20.0, src_cdm_properties_constants["TimeUnit::s"])
 
+bg.AdvanceModelTime(20.0)
 
-
-
+bg.GetLogger().Info("The patient is nice and healthy")
+bg.Get

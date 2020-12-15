@@ -45,9 +45,7 @@ PYBIND11_MODULE(pybBioGearsEngineHeader, m) {
     .def("GetConfiguration",py::overload_cast<>(&biogears::BioGearsEngine::GetConfiguration))
     .def("GetTimeStep",py::overload_cast<const biogears::TimeUnit&>(&biogears::BioGearsEngine::GetTimeStep))
     .def("GetSimulationTime",py::overload_cast<const biogears::TimeUnit&>(&biogears::BioGearsEngine::GetSimulationTime))
-    .def("AdvanceModelTime",py::overload_cast<bool>(&biogears::BioGearsEngine::AdvanceModelTime),py::arg("appendDataTrack") = false)
-    .def("AdvanceModelTime",py::overload_cast<double, const biogears::TimeUnit&, bool>(&biogears::BioGearsEngine::AdvanceModelTime),py::arg("time"),py::arg("unit")=biogears::TimeUnit::s,py::arg("appendDataTrack")=false)
-    .def("ProcessAction",py::overload_cast<const biogears::SEAction&>(&biogears::BioGearsEngine::ProcessAction))
+     .def("ProcessAction",py::overload_cast<const biogears::SEAction&>(&biogears::BioGearsEngine::ProcessAction))
     .def("GetSubstanceManager",py::overload_cast<>(&biogears::BioGearsEngine::GetSubstanceManager))
     .def("SetEventHandler",py::overload_cast<biogears::SEEventHandler*>(&biogears::BioGearsEngine::SetEventHandler))
     .def("GetPatient",py::overload_cast<>(&biogears::BioGearsEngine::GetPatient))
@@ -74,5 +72,8 @@ PYBIND11_MODULE(pybBioGearsEngineHeader, m) {
     .def("IsAutoTracking",py::overload_cast<>(&biogears::BioGearsEngine::IsAutoTracking,py::const_))
     .def("SetAutoTrackFlag",py::overload_cast<bool>(&biogears::BioGearsEngine::SetAutoTrackFlag))
     .def("IsTrackingStabilization",py::overload_cast<>(&biogears::BioGearsEngine::IsTrackingStabilization,py::const_))
-    .def("SetTrackStabilizationFlag",py::overload_cast<bool>(&biogears::BioGearsEngine::SetTrackStabilizationFlag));
+    .def("SetTrackStabilizationFlag",py::overload_cast<bool>(&biogears::BioGearsEngine::SetTrackStabilizationFlag))
+    .def("AdvanceModelTime",py::overload_cast<bool>(&biogears::BioGearsEngine::AdvanceModelTime),py::arg("appendDataTrack") = false)
+    .def("AdvanceModelTime",py::overload_cast<double, const biogears::TimeUnit&, bool>(&biogears::BioGearsEngine::AdvanceModelTime),py::arg("time"),py::arg("unit")=biogears::TimeUnit::s,py::arg("appendDataTrack")=false)
+   ;
 }    
