@@ -40,3 +40,5 @@ ge = pybSEExercise.SEExerciseSEGeneric()
 ge.Intensity.SetValue(0.5)
 exG = pybSEExercise.SEExercise(ge)
 bg.ProcessAction(exG)
+bg.AdvanceModelTime(30.0)
+

@@ -28,6 +28,7 @@ namespace py = pybind11;
 
 PYBIND11_MODULE(pybSECardiovascularSystem, m)
 {
+  py::module_::import("pybSESystem");
 
   py::class_<biogears::SECardiovascularSystem, biogears::SESystem>(m, "SECardiovascularSystem")
     .def(py::init<biogears::Logger*>())
