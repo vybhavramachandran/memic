@@ -36,3 +36,7 @@ bg.GetEngineTrack().GetDataRequestManager().SetResultsFilename('HowToExercise.cs
 bg.AdvanceModelTime(20.0)
 
 bg.GetLogger().Info("The patient is nice and healthy")
+ge = pybSEExercise.SEExerciseSEGeneric()
+ge.Intensity.SetValue(0.5)
+exG = pybSEExercise.SEExercise(ge)
+bg.ProcessAction(exG)

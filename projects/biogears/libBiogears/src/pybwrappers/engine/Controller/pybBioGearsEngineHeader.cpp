@@ -23,6 +23,7 @@ namespace py = pybind11;
 PYBIND11_MODULE(pybBioGearsEngineHeader, m) {
 
     py::class_<biogears::SEScalarTime>(m,"SEScalarTime");
+    py::class_<biogears::TimeUnit>(m,"TimeUnit");
 
     py::class_<biogears::BioGearsEngine>(m, "BioGearsEngine")
     .def(py::init<biogears::Logger *>())
@@ -38,7 +39,7 @@ PYBIND11_MODULE(pybBioGearsEngineHeader, m) {
     .def("SaveState",py::overload_cast<const char* >(&biogears::BioGearsEngine::SaveState))
     .def("SaveState",py::overload_cast<const std::string& >(&biogears::BioGearsEngine::SaveState))
     .def("GetLogger",py::overload_cast<>(&biogears::BioGearsEngine::GetLogger))
-    .def("GetEngineTrack",py::overload_cast<>(&biogears::BioGearsEngine::GetEngineTrack))
+    .def("GetEngineTrack",py::overload_cast<>(&biogears::BioGearsEngine::GetEngineTrack),py::return_value_policy::reference)
     .def("InitializeEngine",py::overload_cast<const char*, const std::vector<const biogears::SECondition*>*, const biogears::PhysiologyEngineConfiguration*>(&biogears::BioGearsEngine::InitializeEngine))
     .def("InitializeEngine",py::overload_cast<const std::string&, const std::vector<const biogears::SECondition*>*, const biogears::PhysiologyEngineConfiguration*>(&biogears::BioGearsEngine::InitializeEngine))
     .def("InitializeEngine",py::overload_cast<const biogears::SEPatient&, const std::vector<const biogears::SECondition*>*, const biogears::PhysiologyEngineConfiguration*>(&biogears::BioGearsEngine::InitializeEngine))
