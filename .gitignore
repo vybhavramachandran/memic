@@ -1,6 +1,6 @@
 build-*/
 build*/
-!HowToExercise.py
+!build/outputs/Release/lib/*.py
 #Sublime
 *.sublime-workspace
 **/__pycache__
