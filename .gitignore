@@ -1,6 +1,5 @@
 build-*/
 build*/
-!build/outputs/Release/lib/*.py
 #Sublime
 *.sublime-workspace
 **/__pycache__
