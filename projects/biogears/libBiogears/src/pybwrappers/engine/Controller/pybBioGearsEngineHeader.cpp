@@ -38,7 +38,7 @@ PYBIND11_MODULE(pybBioGearsEngineHeader, m) {
     .def("LoadState",py::overload_cast<const CDM::PhysiologyEngineStateData&, const biogears::SEScalarTime* >(&biogears::BioGearsEngine::LoadState))
     .def("SaveState",py::overload_cast<const char* >(&biogears::BioGearsEngine::SaveState))
     .def("SaveState",py::overload_cast<const std::string& >(&biogears::BioGearsEngine::SaveState))
-    .def("GetLogger",py::overload_cast<>(&biogears::BioGearsEngine::GetLogger))
+    .def("GetLogger",py::overload_cast<>(&biogears::BioGearsEngine::GetLogger),py::return_value_policy::reference)
     .def("GetEngineTrack",py::overload_cast<>(&biogears::BioGearsEngine::GetEngineTrack),py::return_value_policy::reference)
     .def("InitializeEngine",py::overload_cast<const char*, const std::vector<const biogears::SECondition*>*, const biogears::PhysiologyEngineConfiguration*>(&biogears::BioGearsEngine::InitializeEngine))
     .def("InitializeEngine",py::overload_cast<const std::string&, const std::vector<const biogears::SECondition*>*, const biogears::PhysiologyEngineConfiguration*>(&biogears::BioGearsEngine::InitializeEngine))
