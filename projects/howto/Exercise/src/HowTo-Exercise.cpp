@@ -76,13 +76,13 @@ void HowToExercise()
   //bg->GetLogger()->Info(std::stringstream() <<"AchievedExerciseLevel : " << bg->GetEnergySystem()->GetAchievedExerciseLevel()); // This will be NaN as the patient is not doing any exercise
   //bg->GetLogger()->Info(std::stringstream() <<"FatigueLevel : " << bg->GetEnergySystem()->GetFatigueLevel()); // No fatigue either
   bg->GetLogger()->Info(std::stringstream() << "TotalMetabolicRate : " << bg->GetEnergySystem()->GetTotalMetabolicRate(PowerUnit::W) << PowerUnit::W); //This will be at Basal Level
-
+  
   // Exercise Starts - instantiate an Exercise action and have the engine process it.
-  // After initiating exercise the patient’s metabolic rate begins to increased.
+  // After initiating exercise the patientï¿½s metabolic rate begins to increased.
   // An intensity of 1.0 asks the patient to exercise at the maximum work rate capable by the patient (an output of ~1200W for a patient in relativly good shape).
   // The patient will not be able to sustain this pace for long... and will get fatigued
   // This leads to an increase in core temperature, cardiac output, respiration rate and tidal volume.
-  // The increase in core temperature leads to an elevated sweat rate, which causes the patient’s skin temperature to drop due to evaporation.
+  // The increase in core temperature leads to an elevated sweat rate, which causes the patientï¿½s skin temperature to drop due to evaporation.
   SEExercise::SEGeneric ge;
   ge.Intensity.SetValue(0.5);
   SEExercise exG{ ge };

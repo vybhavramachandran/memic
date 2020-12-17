@@ -7,6 +7,7 @@ import pybSEDataRequestManager
 import pybSEPhysiologyDataRequest
 import pybSEScalar0To1
 import pybSEExercise
+import pybSECardiovascularSystem
 
 from src_cdm_properties_constants import *
 
@@ -36,9 +37,12 @@ bg.GetEngineTrack().GetDataRequestManager().SetResultsFilename('HowToExercise.cs
 bg.AdvanceModelTime(20.0)
 
 bg.GetLogger().Info("The patient is nice and healthy")
-ge = pybSEExercise.SEExerciseSEGeneric()
-ge.Intensity.SetValue(0.5)
-exG = pybSEExercise.SEExercise(ge)
-bg.ProcessAction(exG)
-bg.AdvanceModelTime(30.0)
+bg.GetLogger().Info(bg.GetCardiovascularSystem().GetCardiacOutput(src_cdm_properties_constants["VolumePerTimeUnit::mL_Per_min"]))
+bg.GetLogger().Info(bg.GetCardiovascularSystem().GetCardiacOutput(src_cdm_properties_constants["VolumePerTimeUnit::mL_Per_min"]))
+
+# ge = pybSEExercise.SEExerciseSEGeneric()
+# ge.Intensity.SetValue(0.5)
+# exG = pybSEExercise.SEExercise(ge)
+# bg.ProcessAction(exG)
+# bg.AdvanceModelTime(30.0)
 
