@@ -1,6 +1,3 @@
-# Things to do
+For all the pybind11 code, please check out libBiogears/src/pybwrappers
 
-1. Wrap enough code to create a How-To example fully in python
-    1. Output should be visible
-    2. Graphs should be visible
-
+Please excuse the lack of documentation, this is work-in-progress
