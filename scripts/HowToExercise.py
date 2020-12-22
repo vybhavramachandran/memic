@@ -8,6 +8,9 @@ import pybSEPhysiologyDataRequest
 import pybSEScalar0To1
 import pybSEExercise
 import pybSECardiovascularSystem
+import pybConstants
+import pybSEEnergySystem
+import pybSERespiratorySystem
 
 from src_cdm_properties_constants import *
 
@@ -37,12 +40,61 @@ bg.GetEngineTrack().GetDataRequestManager().SetResultsFilename('HowToExercise.cs
 bg.AdvanceModelTime(20.0)
 
 bg.GetLogger().Info("The patient is nice and healthy")
-bg.GetLogger().Info(bg.GetCardiovascularSystem().GetCardiacOutput(src_cdm_properties_constants["VolumePerTimeUnit::mL_Per_min"]))
-bg.GetLogger().Info(bg.GetCardiovascularSystem().GetCardiacOutput(src_cdm_properties_constants["VolumePerTimeUnit::mL_Per_min"]))
+bgCardioSystem = bg.GetCardiovascularSystem()
+bgEnergySystem = bg.GetEnergySystem()
+bgRespiratorySystem = bg.GetRespiratorySystem()
 
-# ge = pybSEExercise.SEExerciseSEGeneric()
-# ge.Intensity.SetValue(0.5)
-# exG = pybSEExercise.SEExercise(ge)
-# bg.ProcessAction(exG)
-# bg.AdvanceModelTime(30.0)
+bg.GetLogger().Info("Cardiac Output : "+str(bgCardioSystem.GetCardiacOutput(pybConstants.VolumePerTimeUnit.mL_Per_min))+str(pybConstants.VolumePerTimeUnit.mL_Per_min))
+bg.GetLogger().Info("Mean Arterial Pressure : "+str(bgCardioSystem.GetMeanArterialPressure(pybConstants.PressureUnit.mmHg))+str(pybConstants.PressureUnit.mmHg))
+bg.GetLogger().Info("Systolic Pressure : "+str(bgCardioSystem.GetSystolicArterialPressure(pybConstants.PressureUnit.mmHg))+str(pybConstants.PressureUnit.mmHg))
+bg.GetLogger().Info("Diastolic Pressure : "+str(bgCardioSystem.GetDiastolicArterialPressure(pybConstants.PressureUnit.mmHg))+str(pybConstants.PressureUnit.mmHg))
+bg.GetLogger().Info("Heart Rate : "+str(bgCardioSystem.GetHeartRate(pybConstants.FrequencyUnit.Per_min))+"bpm")
+bg.GetLogger().Info("Total Metabolic Rate : "+str(bgEnergySystem.GetTotalMetabolicRate(pybConstants.PowerUnit.kcal_Per_day))+str(pybConstants.PowerUnit.kcal_Per_day))
+bg.GetLogger().Info("Core Temperature : "+str(bgEnergySystem.GetCoreTemperature(pybConstants.TemperatureUnit.C))+str(pybConstants.TemperatureUnit.C))
+bg.GetLogger().Info("RespirationRate : "+str(bgRespiratorySystem.GetRespirationRate(pybConstants.FrequencyUnit.Per_min))+"bpm")
+bg.GetLogger().Info("Total Metabolic Rate : "+str(bgEnergySystem.GetTotalMetabolicRate(pybConstants.PowerUnit.W))+str(pybConstants.PowerUnit.W))
 
+ge = pybSEExercise.SEExerciseSEGeneric()
+ge.Intensity.SetValue(0.2)
+
+exG = pybSEExercise.SEExercise(ge)
+bg.ProcessAction(exG)
+bg.AdvanceModelTime(5.0)
+
+bgCardioSystem = bg.GetCardiovascularSystem()
+bgEnergySystem = bg.GetEnergySystem()
+bgRespiratorySystem = bg.GetRespiratorySystem()
+bg.GetLogger().Info("Cardiac Output : "+str(bgCardioSystem.GetCardiacOutput(pybConstants.VolumePerTimeUnit.mL_Per_min))+str(pybConstants.VolumePerTimeUnit.mL_Per_min))
+bg.GetLogger().Info("Mean Arterial Pressure : "+str(bgCardioSystem.GetMeanArterialPressure(pybConstants.PressureUnit.mmHg))+str(pybConstants.PressureUnit.mmHg))
+bg.GetLogger().Info("Systolic Pressure : "+str(bgCardioSystem.GetSystolicArterialPressure(pybConstants.PressureUnit.mmHg))+str(pybConstants.PressureUnit.mmHg))
+bg.GetLogger().Info("Diastolic Pressure : "+str(bgCardioSystem.GetDiastolicArterialPressure(pybConstants.PressureUnit.mmHg))+str(pybConstants.PressureUnit.mmHg))
+bg.GetLogger().Info("Heart Rate : "+str(bgCardioSystem.GetHeartRate(pybConstants.FrequencyUnit.Per_min))+"bpm")
+bg.GetLogger().Info("Total Metabolic Rate : "+str(bgEnergySystem.GetTotalMetabolicRate(pybConstants.PowerUnit.kcal_Per_day))+str(pybConstants.PowerUnit.kcal_Per_day))
+bg.GetLogger().Info("Core Temperature : "+str(bgEnergySystem.GetCoreTemperature(pybConstants.TemperatureUnit.C))+str(pybConstants.TemperatureUnit.C))
+bg.GetLogger().Info("RespirationRate : "+str(bgRespiratorySystem.GetRespirationRate(pybConstants.FrequencyUnit.Per_min))+"bpm")
+bg.GetLogger().Info("Total Metabolic Rate : "+str(bgEnergySystem.GetTotalMetabolicRate(pybConstants.PowerUnit.W))+str(pybConstants.PowerUnit.W))
+#Additional stuff below
+counter = 0
+
+while counter<5:
+    bg.AdvanceModelTime(5.0)
+    bgCardioSystem = bg.GetCardiovascularSystem()
+    bg.GetLogger().Info("Heart Rate : "+str(bgCardioSystem.GetHeartRate(pybConstants.FrequencyUnit.Per_min))+"bpm")
+    counter+=1
+
+#Additional stuff above
+ge.Intensity.SetValue(0.0)
+exGStop = pybSEExercise.SEExercise(ge)
+bg.ProcessAction(exGStop)
+bg.AdvanceModelTime(30.0)
+
+
+bg.GetLogger().Info("Cardiac Output : "+str(bgCardioSystem.GetCardiacOutput(pybConstants.VolumePerTimeUnit.mL_Per_min))+str(pybConstants.VolumePerTimeUnit.mL_Per_min))
+bg.GetLogger().Info("Mean Arterial Pressure : "+str(bgCardioSystem.GetMeanArterialPressure(pybConstants.PressureUnit.mmHg))+str(pybConstants.PressureUnit.mmHg))
+bg.GetLogger().Info("Systolic Pressure : "+str(bgCardioSystem.GetSystolicArterialPressure(pybConstants.PressureUnit.mmHg))+str(pybConstants.PressureUnit.mmHg))
+bg.GetLogger().Info("Diastolic Pressure : "+str(bgCardioSystem.GetDiastolicArterialPressure(pybConstants.PressureUnit.mmHg))+str(pybConstants.PressureUnit.mmHg))
+bg.GetLogger().Info("Heart Rate : "+str(bgCardioSystem.GetHeartRate(pybConstants.FrequencyUnit.Per_min))+"bpm")
+bg.GetLogger().Info("Total Metabolic Rate : "+str(bgEnergySystem.GetTotalMetabolicRate(pybConstants.PowerUnit.kcal_Per_day))+str(pybConstants.PowerUnit.kcal_Per_day))
+bg.GetLogger().Info("Core Temperature : "+str(bgEnergySystem.GetCoreTemperature(pybConstants.TemperatureUnit.C))+str(pybConstants.TemperatureUnit.C))
+bg.GetLogger().Info("RespirationRate : "+str(bgRespiratorySystem.GetRespirationRate(pybConstants.FrequencyUnit.Per_min))+"bpm")
+bg.GetLogger().Info("Total Metabolic Rate : "+str(bgEnergySystem.GetTotalMetabolicRate(pybConstants.PowerUnit.W))+str(pybConstants.PowerUnit.W))
