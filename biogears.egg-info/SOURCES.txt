@@ -1,0 +1,7 @@
+README.md
+setup.py
+biogears.egg-info/PKG-INFO
+biogears.egg-info/SOURCES.txt
+biogears.egg-info/dependency_links.txt
+biogears.egg-info/not-zip-safe
+biogears.egg-info/top_level.txt

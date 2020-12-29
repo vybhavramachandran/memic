@@ -1,7 +1,9 @@
-from setuptools import setup, Extension
+from setuptools import setup, Extension, find_packages
 from setuptools.command.build_ext import build_ext
 from distutils.version import LooseVersion
-
+import sys
+import subprocess
+import platform
 import os
 
 version = '2.3.0'
@@ -71,6 +73,7 @@ class CMakeBuild(build_ext):
 setup(
     name="biogears",
     version=version,
+    # packages = find_packages(),
     # packages=['biogears'],
     description=desc,
     # long_description=readme,

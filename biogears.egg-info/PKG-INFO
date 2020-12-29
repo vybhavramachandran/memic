@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: biogears
+Version: 2.3.0
+Summary: Physiology Sim - v1
+Home-page: https://github.com/vybhavramachandran
+Author: Vybhav Ramachandran
+Author-email: vybhav@hipo.ai
+Maintainer: Hipo
+Maintainer-email: vybhav@hipo.ai
+License: UNKNOWN
+Download-URL: https://github.com/vybhavramachandran
+Project-URL: Homepage, https://github.com/vybhavramachandran
+Project-URL: Documentation, https://github.com/vybhavramachandran
+Project-URL: Source Code, https://github.com/vybhavramachandran
+Project-URL: Issue Tracker, https://github.com/vybhavramachandran
+Description: UNKNOWN
+Keywords: biology simulation
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Topic :: Scientific/Engineering :: Biology
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
