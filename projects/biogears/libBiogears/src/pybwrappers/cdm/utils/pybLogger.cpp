@@ -11,8 +11,9 @@ namespace py = pybind11;
 
 PYBIND11_MODULE(pybLogger, m) {
 
-
+    std::cout<<"pybLogger called";
     py::class_<biogears::Logger>(m, "Logger")
+
     .def(py::init<std::string&, std::string&>())
     .def(py::init<char*, char*>())
     .def("LogToConsole",&biogears::Logger::LogToConsole)
