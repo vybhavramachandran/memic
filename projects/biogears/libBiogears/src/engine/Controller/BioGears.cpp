@@ -821,7 +821,12 @@ bool BioGears::SetupPatient()
 BioGears::~BioGears()
 {
   if (m_logger_self_managed) {
+    if(m_Logger==nullptr){
+      std::cout<<"THIS IS A NULL POINTER THAT YOU ARE TRYING TO DELETE"<<std::endl;
+    }
+    std::cout<<"BEFORE SAFE DELETE"<<std::endl;
     SAFE_DELETE(m_Logger);
+    std::cout<<"AFTER SAFE DELETE"<<std::endl;
   }
 }
 

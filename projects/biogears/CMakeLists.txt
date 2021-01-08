@@ -421,7 +421,7 @@ include_directories(/usr/include/python3.8/)
 
 add_subdirectory(pybind11)
 # pybind11_add_module(cmake_example src/main.cpp)
-
+# set(CMAKE_CXX_FLAGS "-g") 
 
 pybind11_add_module(pybcardio ./libBiogears/src/pybcardio.cpp)
 pybind11_add_module(pybLogger ./libBiogears/src/pybwrappers/cdm/utils/pybLogger.cpp)
