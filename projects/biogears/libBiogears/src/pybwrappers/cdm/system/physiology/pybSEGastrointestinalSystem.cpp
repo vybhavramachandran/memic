@@ -9,11 +9,14 @@
 #include <biogears/cdm/properties/SEScalarMass.h>
 #include <biogears/cdm/properties/SEScalarMassPerVolume.h>
 #include <biogears/cdm/properties/SEScalarMassPerTime.h>
+#include <biogears/cdm/properties/SEScalarVolumePerTime.h>
 #include <biogears/cdm/properties/SEScalarPower.h>
 #include <biogears/cdm/properties/SEScalarPressure.h>
 #include <biogears/cdm/properties/SEScalarPressureTimePerVolumeArea.h>
 #include <biogears/cdm/properties/SEScalarAmountPerTime.h>
+#include <biogears/cdm/properties/SEScalarVolumePerTimePressureArea.h>
 #include <biogears/cdm/system/SESystem.h>
+#include <biogears/cdm/substance/SESubstance.h>
 #include <biogears/cdm/system/physiology/SEGastrointestinalSystem.h>
 #include <biogears/cdm/utils/Logger.h>
 #include <biogears/container/Tree.tci.h>
@@ -40,15 +43,28 @@ PYBIND11_MODULE(pybSEGastrointestinalSystem, m)
     .def("GetStomachContents", py::overload_cast<>(&biogears::SEGastrointestinalSystem::GetStomachContents, py::const_))
     .def("RemoveStomachContents",&biogears::SEGastrointestinalSystem::RemoveStomachContents)
     .def("GetDrugTransitStates", py::overload_cast<>(&biogears::SEGastrointestinalSystem::GetDrugTransitStates))
-    .def("GetDrugTransitStates", py::overload_cast<const biogears::SESubstance&>(&biogears::SEGastrointestinalSystem::GetDrugTransitStates, py::const_))
+    .def("GetDrugTransitState", &biogears::SEGastrointestinalSystem::GetDrugTransitState)
     .def("NewDrugTransitState",&biogears::SEGastrointestinalSystem::NewDrugTransitState)
-    .def("GetPhysiologyRequestGraph", py::overload_cast<>(&biogears::SEGastrointestinalSystem::GetPhysiologyRequestGraph, py::const_))
+    .def("GetPhysiologyRequestGraph", py::overload_cast<>(&biogears::SEGastrointestinalSystem::GetPhysiologyRequestGraph, py::const_));
+  
 
-#ifdef VERSION_INFO
-      m.attr("__version__")
-    = VERSION_INFO;
-#else
-      m.attr("__version__")
-    = "dev";
-#endif
+
+  py::class_<biogears::SEDrugTransitState>(m, "SEDrugTransitState")
+    .def(py::init<const biogears::SESubstance&>())
+    .def("GetLumenSolidMasses",&biogears::SEDrugTransitState::GetLumenSolidMasses)
+    .def("GetLumenDissolvedMasses",&biogears::SEDrugTransitState::GetLumenDissolvedMasses)
+    .def("GetEnterocyteMasses",&biogears::SEDrugTransitState::GetEnterocyteMasses)
+    .def("SetLumenSolidMasses",&biogears::SEDrugTransitState::SetLumenSolidMasses)
+    .def("SetLumenDissolvedMasses",&biogears::SEDrugTransitState::SetLumenDissolvedMasses)
+    .def("SetEnterocyteMasses",&biogears::SEDrugTransitState::SetEnterocyteMasses)
+    .def("IncrementStomachDissolvedMass",&biogears::SEDrugTransitState::IncrementStomachDissolvedMass)
+    .def("IncrementStomachSolidMass",&biogears::SEDrugTransitState::IncrementStomachSolidMass)
+    .def("GetTotalSolidMassInLumen",&biogears::SEDrugTransitState::GetTotalSolidMassInLumen)
+    .def("GetTotalDissolvedMassInLumen",&biogears::SEDrugTransitState::GetTotalDissolvedMassInLumen)
+    .def("GetTotalMassInEnterocytes",&biogears::SEDrugTransitState::GetTotalMassInEnterocytes)
+    .def("GetTotalMassMetabolized",&biogears::SEDrugTransitState::GetTotalMassMetabolized)
+    .def("GetTotalMassExcreted",&biogears::SEDrugTransitState::GetTotalMassExcreted);
+
+
 }
+
