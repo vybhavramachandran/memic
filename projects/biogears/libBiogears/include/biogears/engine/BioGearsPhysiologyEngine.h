@@ -17,6 +17,8 @@ specific language governing permissions and limitations under the License.
 // CDM Features in use
 #include <biogears/cdm/engine/PhysiologyEngine.h>
 #include <biogears/cdm/utils/FileUtils.h>
+#include <biogears/engine/Controller/BioGears.h>
+
  
 #include <memory>
 
@@ -28,6 +30,7 @@ BIOGEARS_API std::unique_ptr<biogears::PhysiologyEngine> CreateBioGearsEngine(co
 BIOGEARS_API std::unique_ptr<biogears::PhysiologyEngine> CreateBioGearsEngine(const char* working_dir, const char* logfile);
 BIOGEARS_API std::unique_ptr<biogears::PhysiologyEngine> CreateBioGearsEngine(const std::string working_dir, biogears::Logger* logger);
 BIOGEARS_API std::unique_ptr<biogears::PhysiologyEngine> CreateBioGearsEngine(const char* working_dir, biogears::Logger* logger);
+BIOGEARS_API std::unique_ptr<biogears::BioGears> CreateBioGearsEngineAsBioGears(biogears::Logger* logger = nullptr);
 }
 
 namespace mil {

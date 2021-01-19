@@ -79,7 +79,7 @@ void HowToScenarioBase()
   // NOTE : You can just make a DataRequests xml file that holds only data requests
   // And serialize that in instead of a sceanrio file, if all you want is a consistent
   // set of data requests for all your scenarios
-  std::unique_ptr<CDM::ObjectData> obj = Serializer::ReadFile("YourDataRequestsFile.xml", bg->GetLogger());
+  std::unique_ptr<CDM::ObjectData> obj = biogears::Serializer::ReadFile("YourDataRequestsFile.xml", bg->GetLogger());
   drData = dynamic_cast<CDM::DataRequestsData*>(obj.get());
   bg->GetEngineTrack()->GetDataRequestManager().Load(*drData, bg->GetSubstanceManager());
   // Don't need to delete drData as obj is wrapped in a unique_ptr

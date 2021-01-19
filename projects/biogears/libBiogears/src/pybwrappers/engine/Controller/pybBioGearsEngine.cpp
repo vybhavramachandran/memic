@@ -42,6 +42,12 @@ PYBIND11_MODULE(pybBioGearsEngine, m) {
     m.def("CreateBioGearsEngine",py::overload_cast<const char*, const char*>(&biogears::CreateBioGearsEngine));
     m.def("CreateBioGearsEngine",py::overload_cast<const std::string, biogears::Logger*>(&biogears::CreateBioGearsEngine));
     m.def("CreateBioGearsEngine",py::overload_cast<const char*, biogears::Logger*>(&biogears::CreateBioGearsEngine));
+    m.def("CreateBioGearsEngineAsBioGears",&biogears::CreateBioGearsEngineAsBioGears);
+    
+// Testing starts
+    
+// Testing ends here
+    
 
     py::class_<biogears::PhysiologyEngine>(m, "PhysiologyEngine");
 }
