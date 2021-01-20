@@ -31,6 +31,7 @@ BIOGEARS_API std::unique_ptr<biogears::PhysiologyEngine> CreateBioGearsEngine(co
 BIOGEARS_API std::unique_ptr<biogears::PhysiologyEngine> CreateBioGearsEngine(const std::string working_dir, biogears::Logger* logger);
 BIOGEARS_API std::unique_ptr<biogears::PhysiologyEngine> CreateBioGearsEngine(const char* working_dir, biogears::Logger* logger);
 BIOGEARS_API std::unique_ptr<biogears::BioGears> CreateBioGearsEngineAsBioGears(biogears::Logger* logger = nullptr);
+
 }
 
 namespace mil {
