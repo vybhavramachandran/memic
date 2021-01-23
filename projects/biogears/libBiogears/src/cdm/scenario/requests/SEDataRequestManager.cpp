@@ -76,6 +76,7 @@ std::string SEDataRequestManager::GetResovedFilePath() const { return m_WorkingD
 //-----------------------------------------------------------------------------
 void SEDataRequestManager::Clear()
 {
+  //std::cout<<"Clear called"<<std::endl;
   m_SamplesPerSecond = 1.0; // Sample every time step
   DELETE_VECTOR(m_Requests);
   SAFE_DELETE(m_DefaultDecimalFormatting);
@@ -190,6 +191,7 @@ SEPhysiologyDataRequest& SEDataRequestManager::CreatePhysiologyDataRequest(const
 {
   SEPhysiologyDataRequest* dr = new SEPhysiologyDataRequest(dfault);
   m_Requests.push_back(dr);
+  //std::cout<<"CreatePhysiologyDataRequest"<<m_Requests.size()<<std::endl;
   return *dr;
 }
 //-----------------------------------------------------------------------------

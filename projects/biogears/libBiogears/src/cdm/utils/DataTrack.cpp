@@ -746,6 +746,7 @@ void DataTrack::StreamTrackToFile(std::ofstream& file)
 
 void DataTrack::StreamProbesToFile(double time, std::ofstream& file)
 {
+  // std::cout<<"StreamProbesToFile is being called"<<std::endl;
   double d;
   // Write out probe values in heading order
   file << std::fixed << std::setprecision(2) << time << m_Delimiter;

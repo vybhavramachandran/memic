@@ -190,7 +190,7 @@ DataTrack& PhysiologyEngineTrack::GetDataTrack()
 
 void PhysiologyEngineTrack::SetupRequests(bool append)
 {
-  std::cout << "SetupRequests called"<<std::endl;
+  //std::cout << "SetupRequests called" << std::endl;
   bool isOpen = m_ResultsStream.is_open();
   if (!isOpen || m_ForceConnection) { // Process/Hook up all requests with their associated scalars
     for (SEDataRequest* dr : m_DataRequestMgr.GetDataRequests()) {
@@ -204,23 +204,27 @@ void PhysiologyEngineTrack::SetupRequests(bool append)
   // Create the file now that all probes and requests have been added to the track
   // So we get columns for all of our data
   if (!isOpen) {
-    std::cout << "Creation of file called"<<std::endl;
+    //std::cout << "Creation of file called" << std::endl;
     m_DataTrack.CreateFile(m_DataRequestMgr.GetResultsFilename(), m_ResultsStream, (append) ? std::ios_base::app : std::ios_base::trunc);
   }
 }
 
 void PhysiologyEngineTrack::TrackData(double time_s, bool append)
 {
+  //std::cout << "TrackData called" << std::endl;
+
   if (!m_DataRequestMgr.HasDataRequests()) {
     return; // Nothing to do here...
   }
 
   SetupRequests(append);
   PullData();
+  //std::cout << "TrackData called after PullData" << std::endl;
   m_DataTrack.StreamProbesToFile(time_s, m_ResultsStream);
 }
 void PhysiologyEngineTrack::PullData()
 {
+  //std::cout << "PullData called" << std::endl;
   SEDataRequestScalar* ds;
   for (SEDataRequest* dr : m_DataRequestMgr.GetDataRequests()) {
     ds = m_Request2Scalar[dr];

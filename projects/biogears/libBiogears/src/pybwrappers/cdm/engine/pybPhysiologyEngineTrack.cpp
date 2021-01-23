@@ -21,7 +21,7 @@ PYBIND11_MODULE(pybPhysiologyEngineTrack, m) {
   //  .def(py::init<biogears::PhysiologyEngineTrack&>())
     .def("Clear",&biogears::PhysiologyEngineTrack::Clear)
     .def("GetDataTrack",&biogears::PhysiologyEngineTrack::GetDataTrack)
-    .def("GetDataRequestManager",&biogears::PhysiologyEngineTrack::GetDataRequestManager)
+    .def("GetDataRequestManager",&biogears::PhysiologyEngineTrack::GetDataRequestManager,py::return_value_policy::reference)
     .def("ResetFile",&biogears::PhysiologyEngineTrack::ResetFile)
     .def("ConnectRequest",&biogears::PhysiologyEngineTrack::ConnectRequest)
     .def("TrackData",&biogears::PhysiologyEngineTrack::TrackData)

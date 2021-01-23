@@ -43,23 +43,27 @@ protected:
 public:
   bool HasResultsFilename() const { return !m_ResultsFile.empty(); }
   std::string GetResultsFilename() const;
-  const char * GetResultsFilename_cStr() const;
+  const char* GetResultsFilename_cStr() const;
   void SetResultsFilename(const char* name);
   void SetResultsFilename(const std::string& name);
 
   bool HasWorkingDir() const { return !m_ResultsFile.empty(); }
   std::string GetWorkingDir() const;
-  const char * GetWorkingDir_cStr() const;
+  const char* GetWorkingDir_cStr() const;
   void SetWorkingDir(const char* name);
   void SetWorkingDir(const std::string& name);
 
-  std::string GetResovedFilePath() const; 
+  std::string GetResovedFilePath() const;
   //const char * GetResovedFilePath_cStr() const;
 
   double GetSamplesPerSecond() const { return m_SamplesPerSecond; }
   void SetSamplesPerSecond(double num) { m_SamplesPerSecond = num; }
 
-  bool HasDataRequests() { return !m_Requests.empty(); }
+  bool HasDataRequests()
+  {
+    // std::cout << "Here" << m_Requests.size() << std::endl;
+    return !m_Requests.empty();
+  }
   const std::vector<SEDataRequest*>& GetDataRequests() { return m_Requests; }
 
   virtual bool HasDefaultDecimalFormatting() const;
