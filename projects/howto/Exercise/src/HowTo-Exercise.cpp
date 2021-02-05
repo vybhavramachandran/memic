@@ -58,6 +58,9 @@ void HowToExercise()
   bg->GetEngineTrack()->GetDataRequestManager().CreatePhysiologyDataRequest().Set("FatigueLevel");
   bg->GetEngineTrack()->GetDataRequestManager().CreatePhysiologyDataRequest().Set("TotalMetabolicRate", PowerUnit::W);
   bg->GetEngineTrack()->GetDataRequestManager().CreatePhysiologyDataRequest().Set("TotalWorkRateLevel");
+  bg->GetEngineTrack()->GetDataRequestManager().CreatePhysiologyDataRequest().Set("ArterialBloodPH");
+  bg->GetEngineTrack()->GetDataRequestManager().CreatePhysiologyDataRequest().Set("Interleukin6");
+
 
   bg->GetEngineTrack()->GetDataRequestManager().SetResultsFilename("HowToExercise.csv");
 

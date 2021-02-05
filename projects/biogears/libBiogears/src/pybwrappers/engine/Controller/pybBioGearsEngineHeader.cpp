@@ -24,6 +24,8 @@ PYBIND11_MODULE(pybBioGearsEngineHeader, m) {
 
     py::class_<biogears::SEScalarTime>(m,"SEScalarTime");
     py::class_<biogears::TimeUnit>(m,"TimeUnit", py::module_local());
+    py::class_<CDM::PhysiologyEngineStateData>(m,"PhysiologyEngineStateData", py::module_local());
+
 
     py::class_<biogears::BioGearsEngine>(m, "BioGearsEngine")
     .def(py::init<biogears::Logger *>())
