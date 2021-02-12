@@ -68,7 +68,7 @@ namespace py = pybind11;
 
 PYBIND11_MODULE(pybConstants, m)
 {
-  // py::module_::import("CCompoundUnit");
+  py::module_::import("pybCCompoundUnit");
 
   py::class_<biogears::VolumeUnit>(m, "VolumeUnit")
     .def_readonly_static("L", &biogears::VolumeUnit::L)
@@ -257,7 +257,9 @@ PYBIND11_MODULE(pybConstants, m)
     .def_readonly_static("Per_s", &biogears::FrequencyUnit::Per_s)
     .def_readonly_static("Hz", &biogears::FrequencyUnit::Hz)
     .def_readonly_static("Per_hr", &biogears::FrequencyUnit::Per_hr);
-  py::class_<biogears::LengthPerTimeUnit>(m, "LengthPerTimeUnit")
+  py::class_<biogears::LengthPerTimeUnit, biogears::CCompoundUnit>(m, "LengthPerTimeUnit")
+    .def(py::init<const char*>())
+    .def(py::init<const std::string&>())
     .def_readonly_static("m_Per_s", &biogears::LengthPerTimeUnit::m_Per_s)
     .def_readonly_static("cm_Per_s", &biogears::LengthPerTimeUnit::cm_Per_s)
     .def_readonly_static("m_Per_min", &biogears::LengthPerTimeUnit::m_Per_min)
